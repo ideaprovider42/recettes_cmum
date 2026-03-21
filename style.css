@@ -249,6 +249,26 @@ main {
   color: var(--color-text);
 }
 
+.btn-random-refresh {
+  background: none;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  font-size: 1.2rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  vertical-align: middle;
+  margin-left: 0.5rem;
+  transition: all 0.3s;
+  line-height: 1;
+}
+.btn-random-refresh:hover {
+  background: var(--color-primary);
+  color: white;
+  transform: rotate(180deg);
+}
+
 .category-nav {
   display: flex;
   flex-wrap: wrap;
