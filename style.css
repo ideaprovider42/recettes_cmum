@@ -520,8 +520,6 @@ main {
   color: white;
 }
 
-.btn-share::before { content: "\\1F517"; }
-.btn-print::before { content: "\\1F5A8\\FE0F"; }
 
 .meta-item {
   display: flex;
