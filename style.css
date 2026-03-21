@@ -934,6 +934,38 @@ main {
   color: var(--color-primary) !important;
 }
 
+/* Favorites export/import actions */
+.favorites-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.btn-fav-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.5rem 1.2rem;
+  border: 1px solid var(--color-border, #ddd);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--color-text, #333);
+  font-family: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.btn-fav-action:hover {
+  background: var(--color-bg-warm, #fdf6f0);
+  border-color: var(--color-primary, #c0392b);
+}
+
+.btn-import {
+  cursor: pointer;
+}
+
 /* Empty favorites page */
 .empty-favorites {
   text-align: center;
