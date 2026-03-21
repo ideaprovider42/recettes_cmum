@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salade rafraichissante pleine de saveurs - Cuisine moi un mouton</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  
+</head>
+<body class="recipe-page">
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../index.html" class="site-logo">
+      <h1>Cuisine moi un mouton</h1>
+      <span class="site-tagline">Homemade food</span>
+    </a>
+    <nav class="site-nav">
+      <a href="../index.html" class="">Accueil</a>
+      <a href="../categories.html" class="">Catégories</a>
+      <a href="../toutes-les-recettes.html" class="">Toutes les recettes</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <nav class="breadcrumb">
+    <a href="../index.html">Accueil</a>
+    
+    <span>&rsaquo;</span><span>Salade rafraichissante pleine de saveurs</span>
+  </nav>
+  <article class="recipe-article">
+    <header class="recipe-header">
+      <div class="recipe-categories"></div>
+      <h2>Salade rafraichissante pleine de saveurs</h2>
+      <div class="recipe-meta">
+    <div class="meta-item"><span class="meta-label">Préparation</span><span class="meta-value">PT15 minutesM</span></div>
+    
+    <div class="meta-item"><span class="meta-label">Portions</span><span class="meta-value">4-5 personnes</span></div>
+    <div class="meta-item"><span class="meta-label">Publié le</span><span class="meta-value">25 juin 2014</span></div>
+  </div>
+      <div class="recipe-actions">
+        <button class="btn-share" onclick="shareRecipe('Salade rafraichissante pleine de saveurs')">Partager</button>
+        <button class="btn-print" onclick="window.print()">Imprimer</button>
+      </div>
+    </header>
+
+    <div class="recipe-hero-image"><img src="../images/2014/06/salade3-150x150.jpg" alt="Salade rafraichissante pleine de saveurs"></div>
+    <div class="recipe-intro"><p>Comme vous l’avez choisi voici ici la recette d’une bonne petite salade pour cet été!</p><p>Avec la chaleur de ces derniers jours j’avais très envie d’une bonne petite salade bien fraiche mais j’avais envie de changer des traditionnelles salades composées « tomates, concombre maïs ».</p><p>La salade que je vous propose est pleine de saveurs, de fraicheur et même si ça ne se mange pas elle a des très jolies couleurs!!</p><p>Dans cette salade j’ajoute une épice  : le zahtar. Il est difficile d’en trouver en France mais possible d’en faire soi même et je vous consacrerai un article rien pour ça (article ici)!
+Pour celles qui n’en n’ont pas ce n’est pas un ingrédient indispensable c’est juste un petit plus donc ce n’est pas très grave (vous pouvez remplacer par l’épice de votre choix ou un mélange quatre épices sera parfait!!).</p><p>A servir en entrée ou en plat au choix!</p><p>Je vous laisse découvrir la recette</p></div>
+
+    <div class="recipe-body">
+      <section class="recipe-ingredients">
+        <h3>Ingrédients</h3>
+        <div class="ingredient-group"><ul><li>yaourt grec - 200g</li><li>pains Pita - 2</li><li>tomates - 2</li><li>radis - 100 gr</li><li>concombre - 1</li><li>oignons nouveaux - 1 ou 2 petits</li><li>menthe fraîche - 15g</li><li>persil - 25 g</li><li>ail - 1 grosse gousse</li><li>jus de citron pressé - 3 cuillère à soupe</li><li>huile d&#039;olive - 3 cuillère à soupe</li><li>vinaigre de vin blanc - 1 cuillère à soupe</li><li>sel</li><li>poivre noir</li><li>zahtar</li></ul></div>
+      </section>
+
+      <section class="recipe-instructions">
+        <h3>Instructions</h3>
+        <ol>
+          <li>Couper les légumes en petits morceaux.
+Pour les tomates et le concombre couper en petits dés
+Pour les radis couper en fines rondelles</li>
+<li>Faire cuire le pain pita (vous pouvez le faire griller) et le découper à la main en petits morceaux</li>
+<li>Ciseler le persil et la menthe</li>
+<li>Dans un saladier, verser tous les légumes, le persil et la menthe</li>
+<li>Ajouter le yaourt grec puis le pain pita</li>
+<li>Assaisonner</li>
+<li>Si vous n&#039;avez pas de zahtar vous pouvez le remplacer par un mélange quatre épices ça fera très bien l&#039;affaire.</li>
+<li>Remuer et laisser un peu au frais le temps que toutes les saveurs se mélangent</li>
+<li>Servir frais</li>
+        </ol>
+        
+      </section>
+    </div>
+
+    
+  </article>
+</main>
+<footer class="site-footer">
+  <p>Cuisine moi un mouton &mdash; Recettes sauvegardées avec amour</p>
+  <p class="footer-note">Site reconstruit à partir des archives du blog original (2014-2019)</p>
+</footer>
+<script>
+function shareRecipe(title) {
+  var data = { title: title + ' - Cuisine moi un mouton', url: window.location.href };
+  if (navigator.share) {
+    navigator.share(data).catch(function(){});
+  } else {
+    navigator.clipboard.writeText(window.location.href).then(function() {
+      var btn = document.querySelector('.btn-share');
+      btn.textContent = 'Lien copié !';
+      setTimeout(function() { btn.textContent = 'Partager'; }, 2000);
+    });
+  }
+}
+</script>
+</body>
+</html>

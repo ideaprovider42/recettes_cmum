@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detox Water - Cuisine moi un mouton</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  
+</head>
+<body class="recipe-page">
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../index.html" class="site-logo">
+      <h1>Cuisine moi un mouton</h1>
+      <span class="site-tagline">Homemade food</span>
+    </a>
+    <nav class="site-nav">
+      <a href="../index.html" class="">Accueil</a>
+      <a href="../categories.html" class="">Catégories</a>
+      <a href="../toutes-les-recettes.html" class="">Toutes les recettes</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <nav class="breadcrumb">
+    <a href="../index.html">Accueil</a>
+    <span>&rsaquo;</span><a href="../categorie/boissons.html">Boissons</a>
+    <span>&rsaquo;</span><span>Detox Water</span>
+  </nav>
+  <article class="recipe-article">
+    <header class="recipe-header">
+      <div class="recipe-categories"><a href="../categorie/boissons.html" class="category-tag">Boissons</a> <a href="../categorie/sucre.html" class="category-tag">Sucré</a></div>
+      <h2>Detox Water</h2>
+      <div class="recipe-meta">
+    <div class="meta-item"><span class="meta-label">Préparation</span><span class="meta-value">5 min</span></div>
+    
+    <div class="meta-item"><span class="meta-label">Portions</span><span class="meta-value">2 grands verres</span></div>
+    <div class="meta-item"><span class="meta-label">Publié le</span><span class="meta-value">8 juin 2014</span></div>
+  </div>
+      <div class="recipe-actions">
+        <button class="btn-share" onclick="shareRecipe('Detox Water')">Partager</button>
+        <button class="btn-print" onclick="window.print()">Imprimer</button>
+      </div>
+    </header>
+
+    <div class="recipe-hero-image"><img src="../images/2014/06/detoxwater-e1410350400910-300x300.jpg" alt="Detox Water"></div>
+    <div class="recipe-intro"><p>« Detox Water » qui n’a pas récemment entendu parler de cette toute nouvelle mode?Le but est simple : éliminer les toxines et nettoyer l’organisme de l’intérieur tout en lui apportant des vitamines, des fibres grâce aux différentes vertus contenus dans les fruits, légumes etc..
+Mouais… perso je ne suis pas convaincue du côté « detox » mais je trouve l’aspect visuel très sympa et c’est ce qui m’a poussé à faire ma propre detox water fraise-citron-menthe.</p><p>Cette boisson a d’ailleurs été la bienvenue ce weekend car ici il a fait très chaud et ce fut très rafraichissant.</p><p>La detox water se prépare super rapidement. Il suffit de laisser infuser des fruits , légumes , herbes de votre choix dans un verre d’eau (eau plate ou eau gazeuse) pendant toute une nuit.</p><p>Cela permet d’obtenir le lendemain une boisson bien fraîche et qui se présente comme étant une bonne alternative aux boissons sucrées.</p></div>
+
+    <div class="recipe-body">
+      <section class="recipe-ingredients">
+        <h3>Ingrédients</h3>
+        <div class="ingredient-group"><ul><li>fraises - 250 g</li><li>citron - 1</li><li>menthe - 10 feuilles</li></ul></div>
+      </section>
+
+      <section class="recipe-instructions">
+        <h3>Instructions</h3>
+        <ol>
+          <li>Couper les fraises en deux et le citron en tranches</li>
+<li>Nettoyer les feuilles de menthe et en ajouter 5 dans chaque verre</li>
+<li>Dans de grand bocaux (les miens viennent de chez casa) mettre les fruits et la menthe</li>
+<li>Rajouter de l&#039;eau (plate ou petillante) jusqu&#039;en haut du verre, fermer</li>
+<li>Laisser infuser minimum 2h</li>
+<li>Déguster frais!</li>
+        </ol>
+        <div class="recipe-images">
+        <img src="../images/2014/06/detoxwater-e1410350400910.jpg" alt="Étape de préparation" loading="lazy">
+      </div>
+      </section>
+    </div>
+
+    <section class="community-insights">
+      <h3>Les tips de la communauté</h3>
+      <div class="insights-header">
+        <span class="comment-count">2 commentaires</span>
+        <span class="rating-badge rating-good">approuvé</span>
+      </div>
+      <p class="insight-resume">Recette simple qui suscite des questions pratiques. L&#039;auteure confirme qu&#039;on peut consommer les fruits après infusion ou les mixer, bien qu&#039;ils aient perdu une partie de leur saveur.</p><div class="insight-section insight-tips">
+          <h4>Astuces</h4>
+          <ul><li>Manger les fruits gorgés d&#039;eau après infusion</li><li>Mixer les fruits comme alternative</li></ul>
+        </div>
+    </section>
+  </article>
+</main>
+<footer class="site-footer">
+  <p>Cuisine moi un mouton &mdash; Recettes sauvegardées avec amour</p>
+  <p class="footer-note">Site reconstruit à partir des archives du blog original (2014-2019)</p>
+</footer>
+<script>
+function shareRecipe(title) {
+  var data = { title: title + ' - Cuisine moi un mouton', url: window.location.href };
+  if (navigator.share) {
+    navigator.share(data).catch(function(){});
+  } else {
+    navigator.clipboard.writeText(window.location.href).then(function() {
+      var btn = document.querySelector('.btn-share');
+      btn.textContent = 'Lien copié !';
+      setTimeout(function() { btn.textContent = 'Partager'; }, 2000);
+    });
+  }
+}
+</script>
+</body>
+</html>

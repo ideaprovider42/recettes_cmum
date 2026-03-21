@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tartines Pesto-Tomates-Mozza-Jambon - Cuisine moi un mouton</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  
+</head>
+<body class="recipe-page">
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../index.html" class="site-logo">
+      <h1>Cuisine moi un mouton</h1>
+      <span class="site-tagline">Homemade food</span>
+    </a>
+    <nav class="site-nav">
+      <a href="../index.html" class="">Accueil</a>
+      <a href="../categories.html" class="">Catégories</a>
+      <a href="../toutes-les-recettes.html" class="">Toutes les recettes</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <nav class="breadcrumb">
+    <a href="../index.html">Accueil</a>
+    <span>&rsaquo;</span><a href="../categorie/sale.html">Salé</a>
+    <span>&rsaquo;</span><span>Tartines Pesto-Tomates-Mozza-Jambon</span>
+  </nav>
+  <article class="recipe-article">
+    <header class="recipe-header">
+      <div class="recipe-categories"><a href="../categorie/sale.html" class="category-tag">Salé</a> <a href="../categorie/tartines-et-bruschettas.html" class="category-tag">Tartines et Bruschettas</a></div>
+      <h2>Tartines Pesto-Tomates-Mozza-Jambon</h2>
+      <div class="recipe-meta">
+    <div class="meta-item"><span class="meta-label">Préparation</span><span class="meta-value">15 min</span></div>
+    <div class="meta-item"><span class="meta-label">Cuisson</span><span class="meta-value">PT8-10M</span></div>
+    <div class="meta-item"><span class="meta-label">Portions</span><span class="meta-value">8 Tartines</span></div>
+    <div class="meta-item"><span class="meta-label">Publié le</span><span class="meta-value">31 juillet 2014</span></div>
+  </div>
+      <div class="recipe-actions">
+        <button class="btn-share" onclick="shareRecipe('Tartines Pesto-Tomates-Mozza-Jambon')">Partager</button>
+        <button class="btn-print" onclick="window.print()">Imprimer</button>
+      </div>
+    </header>
+
+    <div class="recipe-hero-image"><img src="../images/2014/07/tartine-2-sur-5-300x300.jpg" alt="Tartines Pesto-Tomates-Mozza-Jambon"></div>
+    <div class="recipe-intro"><p>Coucou tout le monde!!!! Aujourd’hui je partage avec vous ma recette de tartine préférée.</p><p>Quand vous demandez à quelqu’un quel est son plat préféré vous ne vous attendez pas à ce qu’il vous réponde « des tartines » !
+Pourtant c’est ce que mon chéri m’a répondu!!
+Je fais cette recette en moyenne 1 fois par semaine (se sont les conditions de Mr^^) et je ne vais pas m’en plaindre non plus car je suis une grande fan aussi!</p><p>Notre tartine préférée est très simple : un peu de pesto, quelques tomates, de la mozzarella et du bon jambon Serrano  et du bon pain ciabatta maison (recette ici)</p><p>Pour ceux qui aiment les tartines vous en avez d’autres juste ICI</p><p>C’est parti pour la recette!!</p></div>
+
+    <div class="recipe-body">
+      <section class="recipe-ingredients">
+        <h3>Ingrédients</h3>
+        <div class="ingredient-group"><ul><li>Pains ciabatta - 4</li><li>Mozzarella - 325 g (eniron 2 boules et demi)</li><li>Tomates - 2</li><li>Pesto - 200 g</li><li>Jambon serrano - 6 tranches</li><li>ail (facultatif)</li></ul></div>
+      </section>
+
+      <section class="recipe-instructions">
+        <h3>Instructions</h3>
+        <ol>
+          <li>Couper les ciabattas en deux dans le sens de la longueur (RECETTE des CIABATTAS : Ici) pour cette recette j&#039;ai fait des ciabattas au thym</li>
+<li>Si vous aimez l&#039;ail vous pouvez gratter une gousse d&#039;ail sur les pains; sinon passer cette étape!</li>
+<li>Tartiner les pains de pesto</li>
+<li>Couper les tomates en fines rondelles et déposez les sur le pesto</li>
+<li>Couper grossièrement le jambon et déposez le sur les tomates</li>
+<li>Terminer avec la mozza couper en rondelles. (2 boules de mozza peuvent suffire mais comme nous sommes de gros gourmands on en met un peu plus :) )</li>
+<li>Enfourner à 180° pendant 10min</li>
+        </ol>
+        <div class="recipe-images">
+        <img src="../images/2014/07/tartine-3-sur-5.jpg" alt="Étape de préparation" loading="lazy">
+<img src="../images/2014/07/tartine-4-sur-5.jpg" alt="Étape de préparation" loading="lazy">
+      </div>
+      </section>
+    </div>
+
+    
+  </article>
+</main>
+<footer class="site-footer">
+  <p>Cuisine moi un mouton &mdash; Recettes sauvegardées avec amour</p>
+  <p class="footer-note">Site reconstruit à partir des archives du blog original (2014-2019)</p>
+</footer>
+<script>
+function shareRecipe(title) {
+  var data = { title: title + ' - Cuisine moi un mouton', url: window.location.href };
+  if (navigator.share) {
+    navigator.share(data).catch(function(){});
+  } else {
+    navigator.clipboard.writeText(window.location.href).then(function() {
+      var btn = document.querySelector('.btn-share');
+      btn.textContent = 'Lien copié !';
+      setTimeout(function() { btn.textContent = 'Partager'; }, 2000);
+    });
+  }
+}
+</script>
+</body>
+</html>

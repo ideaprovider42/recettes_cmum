@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hamburger Raclette - Cuisine moi un mouton</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  
+</head>
+<body class="recipe-page">
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../index.html" class="site-logo">
+      <h1>Cuisine moi un mouton</h1>
+      <span class="site-tagline">Homemade food</span>
+    </a>
+    <nav class="site-nav">
+      <a href="../index.html" class="">Accueil</a>
+      <a href="../categories.html" class="">Catégories</a>
+      <a href="../toutes-les-recettes.html" class="">Toutes les recettes</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <nav class="breadcrumb">
+    <a href="../index.html">Accueil</a>
+    <span>&rsaquo;</span><a href="../categorie/hamburgers.html">Hamburgers</a>
+    <span>&rsaquo;</span><span>Hamburger Raclette</span>
+  </nav>
+  <article class="recipe-article">
+    <header class="recipe-header">
+      <div class="recipe-categories"><a href="../categorie/hamburgers.html" class="category-tag">Hamburgers</a> <a href="../categorie/sale.html" class="category-tag">Salé</a></div>
+      <h2>Hamburger Raclette</h2>
+      <div class="recipe-meta">
+    <div class="meta-item"><span class="meta-label">Préparation</span><span class="meta-value">15 min</span></div>
+    <div class="meta-item"><span class="meta-label">Cuisson</span><span class="meta-value">15 min</span></div>
+    <div class="meta-item"><span class="meta-label">Portions</span><span class="meta-value">4 hamburgers</span></div>
+    <div class="meta-item"><span class="meta-label">Publié le</span><span class="meta-value">30 mai 2014</span></div>
+  </div>
+      <div class="recipe-actions">
+        <button class="btn-share" onclick="shareRecipe('Hamburger Raclette')">Partager</button>
+        <button class="btn-print" onclick="window.print()">Imprimer</button>
+      </div>
+    </header>
+
+    <div class="recipe-hero-image"><img src="../images/2014/05/P10100481-e1410350669780-300x300.jpg" alt="Hamburger Raclette"></div>
+    <div class="recipe-intro"><p>Après la recette du pain à hamburger maison il fallait que je vous parle de « THE » hamburger raclette.
+L’idée de comment m’est venue cette recette est vraiment toute bête. Après une soirée raclette ( bien arrosée) il me restait du fromage à raclette et il était impensable pour moi de le laisser pourrir au frigo. Mon chéri voulait  (à tout prix) que je lui fasse des hamburgers mais j’avais envie de changer et d’en faire des nouveaux mais à quoi? … Le temps d’une douche est hop l’idée était là et le résultat fut une vraie tuerie!!!</p><p>Pour la petite histoire je ne sais pas si vous savez mais les hamburgers ne viennent pas des États Unis mais d’Allemagne et plus précisément d’Hambourg (merci wiki) et ils furent importés aux États Unis au milieu du XIXème siècle.</p><p>Trève de bavardages, je vous dévoile maintenant la recette de ce délicieux hamburger raclette !!</p></div>
+
+    <div class="recipe-body">
+      <section class="recipe-ingredients">
+        <h3>Ingrédients</h3>
+        <div class="ingredient-group"><ul><li>Pains hamburgers</li><li>steack hachés 5% - 4 de 100-125g</li><li>tomates - 2</li><li>oignon rouge - 1</li><li>fromage à raclette - 8</li><li>roquette</li><li>crème fraiche - environ 160g</li><li>fromage à raclette - 4</li></ul></div>
+      </section>
+
+      <section class="recipe-instructions">
+        <h3>Instructions</h3>
+        <ol>
+          <li>Dans une casserole préparer la sauce : faire fondre le fromage à raclette coupé en morceaux dans la crème fraîche.</li>
+<li>Pendant ce temps coupez vos pains et faire cuire les steaks hachés</li>
+<li>Assaisonner la sauce puis tartiner les pains avec</li>
+<li>Déposer de la roquette , deux tranches de tomates, une tranche de fromage à raclette (facultatif) , le steak encore chaud , une deuxième tranche de fromage et de l&#039;oignon rouge émincé</li>
+<li>Mettre dans le four 2-3 min a 180° histoire de bien faire fondre le fromage et ajouter le chapeau en fin de cuisson</li>
+        </ol>
+        <div class="recipe-images">
+        <img src="../images/2014/05/P10100481-e1410350669780.jpg" alt="Étape de préparation" loading="lazy">
+      </div>
+      </section>
+    </div>
+
+    <section class="community-insights">
+      <h3>Les tips de la communauté</h3>
+      <div class="insights-header">
+        <span class="comment-count">2 commentaires</span>
+        <span class="rating-badge rating-good">approuvé</span>
+      </div>
+      <p class="insight-resume">Burger gourmand et réconfortant, clairement calorique mais apprécié pour son aspect comfort food. Incite les lecteurs à expérimenter d&#039;autres recettes de burgers.</p>
+    </section>
+  </article>
+</main>
+<footer class="site-footer">
+  <p>Cuisine moi un mouton &mdash; Recettes sauvegardées avec amour</p>
+  <p class="footer-note">Site reconstruit à partir des archives du blog original (2014-2019)</p>
+</footer>
+<script>
+function shareRecipe(title) {
+  var data = { title: title + ' - Cuisine moi un mouton', url: window.location.href };
+  if (navigator.share) {
+    navigator.share(data).catch(function(){});
+  } else {
+    navigator.clipboard.writeText(window.location.href).then(function() {
+      var btn = document.querySelector('.btn-share');
+      btn.textContent = 'Lien copié !';
+      setTimeout(function() { btn.textContent = 'Partager'; }, 2000);
+    });
+  }
+}
+</script>
+</body>
+</html>

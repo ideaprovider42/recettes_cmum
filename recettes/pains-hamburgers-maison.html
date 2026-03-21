@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pains Hamburgers maison - Cuisine moi un mouton</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  
+</head>
+<body class="recipe-page">
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../index.html" class="site-logo">
+      <h1>Cuisine moi un mouton</h1>
+      <span class="site-tagline">Homemade food</span>
+    </a>
+    <nav class="site-nav">
+      <a href="../index.html" class="">Accueil</a>
+      <a href="../categories.html" class="">Catégories</a>
+      <a href="../toutes-les-recettes.html" class="">Toutes les recettes</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <nav class="breadcrumb">
+    <a href="../index.html">Accueil</a>
+    
+    <span>&rsaquo;</span><span>Pains Hamburgers maison</span>
+  </nav>
+  <article class="recipe-article">
+    <header class="recipe-header">
+      <div class="recipe-categories"></div>
+      <h2>Pains Hamburgers maison</h2>
+      <div class="recipe-meta">
+    <div class="meta-item"><span class="meta-label">Préparation</span><span class="meta-value">PT60 minutesM</span></div>
+    <div class="meta-item"><span class="meta-label">Cuisson</span><span class="meta-value">PT15 minutesM</span></div>
+    <div class="meta-item"><span class="meta-label">Portions</span><span class="meta-value">8 gros pains</span></div>
+    <div class="meta-item"><span class="meta-label">Publié le</span><span class="meta-value">29 mai 2014</span></div>
+  </div>
+      <div class="recipe-actions">
+        <button class="btn-share" onclick="shareRecipe('Pains Hamburgers maison')">Partager</button>
+        <button class="btn-print" onclick="window.print()">Imprimer</button>
+      </div>
+    </header>
+
+    <div class="recipe-hero-image"><img src="../images/2014/05/P1020073-150x150.jpg" alt="Pains Hamburgers maison"></div>
+    
+
+    <div class="recipe-body">
+      <section class="recipe-ingredients">
+        <h3>Ingrédients</h3>
+        <div class="ingredient-group"><ul><li>farine - 560 g</li><li>levure deshydratée - 12 g</li><li>lait - 220 ml</li><li>eau - 100 ml</li><li>beurre salé - 55 g</li><li>sucre - 25 g</li><li>sel - 9 g</li><li>oeuf - 1</li></ul></div>
+      </section>
+
+      <section class="recipe-instructions">
+        <h3>Instructions</h3>
+        <ol>
+          <li>Dans une casserole mélanger le lait , l&#039;eau et le beurre à feu doux jusqu’à ce que le beurre soit totalement fondu.</li>
+<li>Dans un grand saladier mettre la moitié de la farine et la levure</li>
+<li>Ajouter le mélange lait-oeuf-beurre dans le saladier ainsi que l’œuf et mélanger</li>
+<li>Ajouter progressivement la farine restante en pétrissant bien à chaque fois</li>
+<li>Pétrisser pendant 8-10 min</li>
+<li>Couvrir d&#039;un linge propre et laissez gonfler 30min si vous êtes pressé sinon 1h.
+Moi je mets mon four en marche à 80° avant de faire reposer ma pâte  puis je l’arrête 2 min avant d&#039;y mettre ma pâte à gonfler.</li>
+<li>Votre pâte doit avoir doublé de volume</li>
+<li>Divisez la en 8 , 15 , 30 boules en fonction de la taille que souhaitez obtenir</li>
+<li>Disposez les sur une plaque allant au four et couvrez de nouveau avec un linge pour la faire lever à nouveau. (10 à 30min)</li>
+<li>Préchauffer le four a 180°</li>
+<li>Badigeonner d&#039;un jaune d’œuf mélangé avec un peu de lait et saupoudrer de graines de sésame (ou de pavot pour moi!)</li>
+<li>Laissez cuire 15 min</li>
+        </ol>
+        
+      </section>
+    </div>
+
+    
+  </article>
+</main>
+<footer class="site-footer">
+  <p>Cuisine moi un mouton &mdash; Recettes sauvegardées avec amour</p>
+  <p class="footer-note">Site reconstruit à partir des archives du blog original (2014-2019)</p>
+</footer>
+<script>
+function shareRecipe(title) {
+  var data = { title: title + ' - Cuisine moi un mouton', url: window.location.href };
+  if (navigator.share) {
+    navigator.share(data).catch(function(){});
+  } else {
+    navigator.clipboard.writeText(window.location.href).then(function() {
+      var btn = document.querySelector('.btn-share');
+      btn.textContent = 'Lien copié !';
+      setTimeout(function() { btn.textContent = 'Partager'; }, 2000);
+    });
+  }
+}
+</script>
+</body>
+</html>

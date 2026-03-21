@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cheesecake Nutella - Cuisine moi un mouton</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  
+</head>
+<body class="recipe-page">
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../index.html" class="site-logo">
+      <h1>Cuisine moi un mouton</h1>
+      <span class="site-tagline">Homemade food</span>
+    </a>
+    <nav class="site-nav">
+      <a href="../index.html" class="">Accueil</a>
+      <a href="../categories.html" class="">Catégories</a>
+      <a href="../toutes-les-recettes.html" class="">Toutes les recettes</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <nav class="breadcrumb">
+    <a href="../index.html">Accueil</a>
+    <span>&rsaquo;</span><a href="../categorie/gateaux-et-layer-cakes.html">Gâteaux et Layer cakes</a>
+    <span>&rsaquo;</span><span>Cheesecake Nutella</span>
+  </nav>
+  <article class="recipe-article">
+    <header class="recipe-header">
+      <div class="recipe-categories"><a href="../categorie/gateaux-et-layer-cakes.html" class="category-tag">Gâteaux et Layer cakes</a> <a href="../categorie/sucre.html" class="category-tag">Sucré</a></div>
+      <h2>Cheesecake Nutella</h2>
+      <div class="recipe-meta">
+    <div class="meta-item"><span class="meta-label">Préparation</span><span class="meta-value">15 min</span></div>
+    
+    <div class="meta-item"><span class="meta-label">Portions</span><span class="meta-value">6 personnes</span></div>
+    <div class="meta-item"><span class="meta-label">Publié le</span><span class="meta-value">8 juin 2014</span></div>
+  </div>
+      <div class="recipe-actions">
+        <button class="btn-share" onclick="shareRecipe('Cheesecake Nutella')">Partager</button>
+        <button class="btn-print" onclick="window.print()">Imprimer</button>
+      </div>
+    </header>
+
+    <div class="recipe-hero-image"><img src="../images/2014/06/cheesecake-nutella-e1410350250921-300x300.jpg" alt="Cheesecake Nutella"></div>
+    <div class="recipe-intro"><p>Et si on mangeait un cheesecake Nutella!!?Alors voila ce n’est pas vraiment un cheesecake comme on a l’habitude d’en voir vu que normalement ils sont blancs.
+J’ai décidé d’y ajouter du nutella (pas calorique du tout et parfait pour un régime avant l’été!!!!) .
+C’est une recette vraiment toute simple à réaliser. Au départ j’avais peur que ce soit un peu écœurant et lourd. Le verdict? Pas du tout (peut être que si une personne s’avalait le gâteau d’un coup d’un seul il trouverait ça écœurant, moi je me suis arrêtée à deux parts!)
+Un régal pour tout le monde! Le cheesecake Nutella il faut vraiment l’essayer!!</p></div>
+
+    <div class="recipe-body">
+      <section class="recipe-ingredients">
+        <h3>Ingrédients</h3>
+        <div class="ingredient-group"><ul><li>Petit beurre - 250 g</li><li>Beurre mou - 100 g</li><li>nutella - 1 cuillère à café</li><li>Nutella - 400 g</li><li>philadelphia à température ambiante - 500 g</li><li>sucre glace - 60 g</li></ul></div>
+      </section>
+
+      <section class="recipe-instructions">
+        <h3>Instructions</h3>
+        <ol>
+          <li>Mixer les biscuits, le beurre et 1 cac de nutella.</li>
+<li>Tasser le mélange au fond du moule à manquer</li>
+<li>Dans une jatte battre le fromage avec le sucre glace</li>
+<li>Sans cesser de battre le fromage ajouter petit à petit le nutella</li>
+<li>Continuer de battre jusqu’à obtenir une crème bien homogène</li>
+<li>A l&#039;aide d&#039;une spatule verser petit à petit la crème sur les biscuits</li>
+<li>Égaliser la surface</li>
+<li>Mettre au réfrigérateur minimum 4h</li>
+<li>Au moment de servir , démouler et décorer (moi j&#039;ai mixé des noisettes entières pour en mettre tout autour du gâteau et sur le dessus)</li>
+        </ol>
+        <div class="recipe-images">
+        <img src="../images/2014/06/cheesecakenutella2-e1410350331621.jpg" alt="Étape de préparation" loading="lazy">
+      </div>
+      </section>
+    </div>
+
+    <section class="community-insights">
+      <h3>Les tips de la communauté</h3>
+      <div class="insights-header">
+        <span class="comment-count">2 commentaires</span>
+        <span class="rating-badge rating-great">coup de coeur</span>
+      </div>
+      <p class="insight-resume">Cheesecake décrit comme &#039;une véritable tuerie&#039; par les lecteurs. Très peu de commentaires mais tous extrêmement positifs et enthousiaste.</p>
+    </section>
+  </article>
+</main>
+<footer class="site-footer">
+  <p>Cuisine moi un mouton &mdash; Recettes sauvegardées avec amour</p>
+  <p class="footer-note">Site reconstruit à partir des archives du blog original (2014-2019)</p>
+</footer>
+<script>
+function shareRecipe(title) {
+  var data = { title: title + ' - Cuisine moi un mouton', url: window.location.href };
+  if (navigator.share) {
+    navigator.share(data).catch(function(){});
+  } else {
+    navigator.clipboard.writeText(window.location.href).then(function() {
+      var btn = document.querySelector('.btn-share');
+      btn.textContent = 'Lien copié !';
+      setTimeout(function() { btn.textContent = 'Partager'; }, 2000);
+    });
+  }
+}
+</script>
+</body>
+</html>

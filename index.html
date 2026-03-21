@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accueil - Cuisine moi un mouton</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <script defer src="./search.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="./index.html" class="site-logo">
+      <h1>Cuisine moi un mouton</h1>
+      <span class="site-tagline">Homemade food</span>
+    </a>
+    <nav class="site-nav">
+      <a href="./index.html" class="active">Accueil</a>
+      <a href="./categories.html" class="">Catégories</a>
+      <a href="./toutes-les-recettes.html" class="">Toutes les recettes</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <h2>Cuisine moi un mouton</h2>
+    <p class="hero-subtitle">440 recettes sauvegardées du blog original (2014-2019)</p>
+    <div class="search-bar">
+  <input type="text" id="search-input" placeholder="Rechercher une recette..." autocomplete="off">
+  <div id="search-results" class="search-results"></div>
+</div>
+  </section>
+
+  <section class="category-nav-section">
+    <h3>Explorer par catégorie</h3>
+    <div class="category-nav">
+      <a href="./categorie/sale.html" class="category-tag category-tag-large">Salé (225)</a>
+<a href="./categorie/sucre.html" class="category-tag category-tag-large">Sucré (207)</a>
+<a href="./categorie/brunch.html" class="category-tag category-tag-large">Brunch (66)</a>
+<a href="./categorie/recettes-vegetariennes.html" class="category-tag category-tag-large">Recettes Végétariennes (65)</a>
+<a href="./categorie/gateaux-et-layer-cakes.html" class="category-tag category-tag-large">Gâteaux et Layer cakes (64)</a>
+<a href="./categorie/repas-light.html" class="category-tag category-tag-large">Repas Light (62)</a>
+<a href="./categorie/repas-du-monde.html" class="category-tag category-tag-large">Repas du monde (61)</a>
+<a href="./categorie/aperitif.html" class="category-tag category-tag-large">Apéritif (53)</a>
+<a href="./categorie/noel.html" class="category-tag category-tag-large">Noël (51)</a>
+<a href="./categorie/desserts-du-monde.html" class="category-tag category-tag-large">Desserts du monde (36)</a>
+<a href="./categorie/salade.html" class="category-tag category-tag-large">Salade (30)</a>
+<a href="./categorie/tartes-sucrees.html" class="category-tag category-tag-large">Tartes sucrées (30)</a>
+    </div>
+  </section>
+
+  <section class="recipe-section">
+    <h3>Dernières recettes</h3>
+    <div class="recipe-grid">
+      <a href="./recettes/sandwich-vegetarien-au-chou-fleur-facon-chawarma.html" class="recipe-card">
+  <div class="recipe-card-image">
+    <img src="./images/2019/06/Shawarma-chou-fleur-1-3-300x300.jpg" alt="Sandwich végétarien au chou fleur façon chawarma" loading="lazy">
+    <span class="comment-badge">3 avis</span>
+  </div>
+  <div class="recipe-card-content">
+    <div class="recipe-card-cats"><span class="category-tag">Recettes Végétariennes</span><span class="category-tag">Salé</span><span class="category-tag">Sandwiches</span></div>
+    <h3>Sandwich végétarien au chou fleur façon chawarma</h3>
+    <div class="recipe-card-meta">
+      <span>Prépa : 15 min</span>
+      <span>Cuisson : 20 min</span>
+    </div>
+  </div>
+</a>
+<a href="./recettes/pizza-focaccia-aux-asperges-tomates-et-tomme-de-savoie-igp.html" class="recipe-card">
+  <div class="recipe-card-image">
+    <img src="./images/2019/06/foccacia-Tomme-de-Savoie-2-300x300.jpg" alt="Pizza-focaccia aux asperges, tomates et Tomme de Savoie IGP" loading="lazy">
+    <span class="comment-badge">6 avis</span>
+  </div>
+  <div class="recipe-card-content">
+    <div class="recipe-card-cats"><span class="category-tag">Pizzas</span><span class="category-tag">Salé</span></div>
+    <h3>Pizza-focaccia aux asperges, tomates et Tomme de Savoie IGP</h3>
+    <div class="recipe-card-meta">
+      <span>Prépa : 15 min</span>
+      <span>Cuisson : 20 min</span>
+    </div>
+  </div>
+</a>
+<a href="./recettes/lillet-tonic.html" class="recipe-card">
+  <div class="recipe-card-image">
+    <img src="./images/2019/06/Lillet-cocktail-1-300x300.jpg" alt="Lillet Tonic {cocktail}" loading="lazy">
+    <span class="comment-badge">1 avis</span>
+  </div>
+  <div class="recipe-card-content">
+    <div class="recipe-card-cats"><span class="category-tag">Apéritif</span><span class="category-tag">Boissons</span></div>
+    <h3>Lillet Tonic {cocktail}</h3>
+    <div class="recipe-card-meta">
+      <span>Prépa : 5 min</span>
+      
+    </div>
+  </div>
+</a>
+<a href="./recettes/cookies-creme-de-sesame-et-pepites-de-chocolat.html" class="recipe-card">
+  <div class="recipe-card-image">
+    <img src="./images/2019/05/Cookies-tahine-6-300x300.jpg" alt="Cookies crème de sésame et pépites de chocolat {sans beurre ni œufs}" loading="lazy">
+    <span class="comment-badge">1 avis</span>
+  </div>
+  <div class="recipe-card-content">
+    <div class="recipe-card-cats"><span class="category-tag">Recettes Végétariennes</span><span class="category-tag">Sucré</span></div>
+    <h3>Cookies crème de sésame et pépites de chocolat {sans beurre ni œufs}</h3>
+    <div class="recipe-card-meta">
+      <span>Prépa : 15 min</span>
+      <span>Cuisson : 10 min</span>
+    </div>
+  </div>
+</a>
+<a href="./recettes/spaghettis-de-courgettes.html" class="recipe-card">
+  <div class="recipe-card-image">
+    <img src="./images/2019/05/Spaghettis-de-courgettes-1-300x300.jpg" alt="Spaghettis de courgettes" loading="lazy">
+    <span class="comment-badge">3 avis</span>
+  </div>
+  <div class="recipe-card-content">
+    <div class="recipe-card-cats"><span class="category-tag">Pâtes et Gnocchis</span><span class="category-tag">Salé</span></div>
+    <h3>Spaghettis de courgettes</h3>
+    <div class="recipe-card-meta">
+      <span>Prépa : 15 min</span>
+      
+    </div>
+  </div>
+</a>
+<a href="./recettes/gaufres-liegeoises.html" class="recipe-card">
+  <div class="recipe-card-image">
+    <img src="./images/2019/04/Gaufres-liégeoises-1-300x300.jpg" alt="Gaufres liégeoises" loading="lazy">
+    <span class="comment-badge">11 avis</span>
+  </div>
+  <div class="recipe-card-content">
+    <div class="recipe-card-cats"><span class="category-tag">Sucré</span></div>
+    <h3>Gaufres liégeoises</h3>
+    <div class="recipe-card-meta">
+      <span>Prépa : 15 min</span>
+      <span>Cuisson : 5 min</span>
+    </div>
+  </div>
+</a>
+<a href="./recettes/gateau-au-chocolat-a-lhuile-dolive.html" class="recipe-card">
+  <div class="recipe-card-image">
+    <img src="./images/2019/04/Gateau-au-chocolat-a-lhuile-dolive-1-2-585x390.jpg" alt="Gâteau au chocolat à l’huile d’olive" loading="lazy">
+    <span class="comment-badge">7 avis</span>
+  </div>
+  <div class="recipe-card-content">
+    <div class="recipe-card-cats"><span class="category-tag">Recettes Végétariennes</span><span class="category-tag">Sucré</span></div>
+    <h3>Gâteau au chocolat à l’huile d’olive</h3>
+    <div class="recipe-card-meta">
+      <span>Prépa : 15 min</span>
+      <span>Cuisson : 25 min</span>
+    </div>
+  </div>
+</a>
+<a href="./recettes/roses-des-sables-chocolat-au-lait-noix-de-coco.html" class="recipe-card">
+  <div class="recipe-card-image">
+    <img src="./images/2019/03/Roses-des-sables-1-2.jpg" alt="Roses des sables {chocolat au lait noix de coco}" loading="lazy">
+    <span class="comment-badge">5 avis</span>
+  </div>
+  <div class="recipe-card-content">
+    <div class="recipe-card-cats"><span class="category-tag">Sucré</span></div>
+    <h3>Roses des sables {chocolat au lait noix de coco}</h3>
+    <div class="recipe-card-meta">
+      
+      
+    </div>
+  </div>
+</a>
+<a href="./recettes/bo-bun-vegetarien.html" class="recipe-card">
+  <div class="recipe-card-image">
+    <img src="./images/2019/03/Bo-bun-végétarien-1-2-300x300.jpg" alt="Bo bun végétarien" loading="lazy">
+    <span class="comment-badge">5 avis</span>
+  </div>
+  <div class="recipe-card-content">
+    <div class="recipe-card-cats"><span class="category-tag">Recettes Végétariennes</span><span class="category-tag">Repas du monde</span><span class="category-tag">Salade</span></div>
+    <h3>Bo bun végétarien</h3>
+    <div class="recipe-card-meta">
+      <span>Prépa : 15 min</span>
+      
+    </div>
+  </div>
+</a>
+<a href="./recettes/ananas-rotis.html" class="recipe-card">
+  <div class="recipe-card-image">
+    <img src="./images/2019/03/Anans-rôti-1-585x390.jpg" alt="Ananas rôtis" loading="lazy">
+    <span class="comment-badge">3 avis</span>
+  </div>
+  <div class="recipe-card-content">
+    <div class="recipe-card-cats"><span class="category-tag">Collab Grand Frais®</span><span class="category-tag">Recettes Végétariennes</span><span class="category-tag">Sucré</span></div>
+    <h3>Ananas rôtis</h3>
+    <div class="recipe-card-meta">
+      <span>Prépa : 10 min</span>
+      <span>Cuisson : 15 min</span>
+    </div>
+  </div>
+</a>
+<a href="./recettes/coquillettes-aux-epinards-brie-citron-et-artichauts.html" class="recipe-card">
+  <div class="recipe-card-image">
+    <img src="./images/2019/03/coquillettes-1-585x390.jpg" alt="Coquillettes aux épinards, brie, citron et artichauts" loading="lazy">
+    <span class="comment-badge">2 avis</span>
+  </div>
+  <div class="recipe-card-content">
+    <div class="recipe-card-cats"><span class="category-tag">Pâtes et Gnocchis</span><span class="category-tag">Salé</span></div>
+    <h3>Coquillettes aux épinards, brie, citron et artichauts</h3>
+    <div class="recipe-card-meta">
+      <span>Prépa : 15 min</span>
+      
+    </div>
+  </div>
+</a>
+<a href="./recettes/pizza-saumon-epinards.html" class="recipe-card">
+  <div class="recipe-card-image">
+    <img src="./images/2019/02/Pizza-saumon-épinards-1-300x300.jpg" alt="Pizza saumon épinards" loading="lazy">
+    <span class="comment-badge">1 avis</span>
+  </div>
+  <div class="recipe-card-content">
+    <div class="recipe-card-cats"><span class="category-tag">Pizzas</span><span class="category-tag">Salé</span></div>
+    <h3>Pizza saumon épinards</h3>
+    <div class="recipe-card-meta">
+      <span>Prépa : 15 min</span>
+      <span>Cuisson : 15 min</span>
+    </div>
+  </div>
+</a>
+    </div>
+  </section>
+
+  <section class="recipe-section">
+    <h3>Les plus populaires</h3>
+    <div class="recipe-grid">
+      <a href="./recettes/cupcake-kinder-bueno.html" class="recipe-card">
+  <div class="recipe-card-image">
+    <img src="./images/2014/06/cupcake-kinder-bueno-3-sur-4-300x300.jpg" alt="Cupcake Kinder Bueno" loading="lazy">
+    <span class="comment-badge">167 avis</span>
+  </div>
+  <div class="recipe-card-content">
+    <div class="recipe-card-cats"><span class="category-tag">Cupcakes</span><span class="category-tag">Cupcakes, cake pops &amp; co</span><span class="category-tag">Sucré</span></div>
+    <h3>Cupcake Kinder Bueno</h3>
+    <div class="recipe-card-meta">
+      <span>Prépa : 20 min</span>
+      <span>Cuisson : 20 min</span>
+    </div>
+  </div>
+</a>
+<a href="./recettes/rainbow-cake.html" class="recipe-card">
+  <div class="recipe-card-image">
+    <img src="./images/2014/09/Rainbow-cake-22-sur-31-300x300.jpg" alt="Rainbow Cake" loading="lazy">
+    <span class="comment-badge">165 avis</span>
+  </div>
+  <div class="recipe-card-content">
+    <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
+    <h3>Rainbow Cake</h3>
+    <div class="recipe-card-meta">
+      <span>Prépa : 3h</span>
+      <span>Cuisson : 60 min</span>
+    </div>
+  </div>
+</a>
+<a href="./recettes/napolitain-maison.html" class="recipe-card">
+  <div class="recipe-card-image">
+    <img src="./images/2016/04/recette-Napolitain.-1-5-300x300.jpg" alt="Napolitain maison" loading="lazy">
+    <span class="comment-badge">114 avis</span>
+  </div>
+  <div class="recipe-card-content">
+    <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
+    <h3>Napolitain maison</h3>
+    <div class="recipe-card-meta">
+      <span>Prépa : 20 min</span>
+      <span>Cuisson : 15 min</span>
+    </div>
+  </div>
+</a>
+<a href="./recettes/glacage-au-beurre-a-la-meringue-suisse.html" class="recipe-card">
+  <div class="recipe-card-image">
+    <img src="./images/2014/08/fin-e1410351663534-300x300.jpg" alt="Réussir sa crème au beurre à la meringue Suisse :" loading="lazy">
+    <span class="comment-badge">106 avis</span>
+  </div>
+  <div class="recipe-card-content">
+    <div class="recipe-card-cats"><span class="category-tag">Cupcakes</span><span class="category-tag">Ingrédients &amp; co</span><span class="category-tag">Sucré</span></div>
+    <h3>Réussir sa crème au beurre à la meringue Suisse :</h3>
+    <div class="recipe-card-meta">
+      <span>Prépa : 30 min</span>
+      
+    </div>
+  </div>
+</a>
+<a href="./recettes/pate-a-tartiner-de-christophe-michalak.html" class="recipe-card">
+  <div class="recipe-card-image">
+    <img src="./images/2015/09/pâte-à-tartiner-de-christophe-michalak-5-300x300.jpg" alt="Pâte à tartiner de Christophe Michalak" loading="lazy">
+    <span class="comment-badge">100 avis</span>
+  </div>
+  <div class="recipe-card-content">
+    <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Sucré</span></div>
+    <h3>Pâte à tartiner de Christophe Michalak</h3>
+    <div class="recipe-card-meta">
+      <span>Prépa : 40 min</span>
+      <span>Cuisson : 20 min</span>
+    </div>
+  </div>
+</a>
+<a href="./recettes/americain-cookies.html" class="recipe-card">
+  <div class="recipe-card-image">
+    <img src="./images/2015/04/americain-cookies-3-300x300.jpg" alt="Americain cookies « presque » comme les cookies de levain bakery" loading="lazy">
+    <span class="comment-badge">99 avis</span>
+  </div>
+  <div class="recipe-card-content">
+    <div class="recipe-card-cats"><span class="category-tag">Desserts du monde</span><span class="category-tag">Sucré</span></div>
+    <h3>Americain cookies « presque » comme les cookies de levain bakery</h3>
+    <div class="recipe-card-meta">
+      <span>Prépa : 30 min</span>
+      <span>Cuisson : 20 min</span>
+    </div>
+  </div>
+</a>
+    </div>
+  </section>
+
+  <div class="see-all">
+    <a href="./toutes-les-recettes.html" class="btn-see-all">Voir toutes les recettes</a>
+  </div>
+</main>
+<footer class="site-footer">
+  <p>Cuisine moi un mouton &mdash; Recettes sauvegardées avec amour</p>
+  <p class="footer-note">Site reconstruit à partir des archives du blog original (2014-2019)</p>
+</footer>
+</body>
+</html>

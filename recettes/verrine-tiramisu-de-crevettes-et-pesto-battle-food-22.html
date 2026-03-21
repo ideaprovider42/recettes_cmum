@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verrine tiramisu de crevettes et pesto {Battle food #22} - Cuisine moi un mouton</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  
+</head>
+<body class="recipe-page">
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../index.html" class="site-logo">
+      <h1>Cuisine moi un mouton</h1>
+      <span class="site-tagline">Homemade food</span>
+    </a>
+    <nav class="site-nav">
+      <a href="../index.html" class="">Accueil</a>
+      <a href="../categories.html" class="">Catégories</a>
+      <a href="../toutes-les-recettes.html" class="">Toutes les recettes</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <nav class="breadcrumb">
+    <a href="../index.html">Accueil</a>
+    
+    <span>&rsaquo;</span><span>Verrine tiramisu de crevettes et pesto {Battle food #22}</span>
+  </nav>
+  <article class="recipe-article">
+    <header class="recipe-header">
+      <div class="recipe-categories"></div>
+      <h2>Verrine tiramisu de crevettes et pesto {Battle food #22}</h2>
+      <div class="recipe-meta">
+    <div class="meta-item"><span class="meta-label">Préparation</span><span class="meta-value">PT15 minutesM</span></div>
+    
+    <div class="meta-item"><span class="meta-label">Portions</span><span class="meta-value">environ 6 personnes</span></div>
+    <div class="meta-item"><span class="meta-label">Publié le</span><span class="meta-value">21 juillet 2014</span></div>
+  </div>
+      <div class="recipe-actions">
+        <button class="btn-share" onclick="shareRecipe('Verrine tiramisu de crevettes et pesto {Battle food #22}')">Partager</button>
+        <button class="btn-print" onclick="window.print()">Imprimer</button>
+      </div>
+    </header>
+
+    
+    <div class="recipe-intro"><p>Bonjour tout le monde! Je vous présente ma participation à la BattleFood #22 avec ma verrine tiramisu au pesto et aux crevettes.</p><p>Pour petit rappel la battle food est un défi culinaire entre blogueurs et non blogueurs autour d’un thème choisi, juste pour le plaisir de cuisiner, d’inventer et de partager de merveilleuses recettes! Pas de gagnants pas de perdants! Juste le plaisir de participer!</p><p>Une marraine/parrain est élu à chaque édition et pour celle-ci il s’agit du joli blog d’épices et moi qui a choisi pour thème : verrines épicées de l’été!</p><p>Parfait pour moi ce thème car j’adore réaliser de petites verrines. En apéro, entrées ou en dessert les verrines permettent d’obtenir une jolie présentation et de faire de chouettes mélanges!</p><p>Ma verrine que j’aime bien appeler verrine tiramisu de crevettes et pesto est une recette que je réalise depuis pas mal d’années notamment pour l’apéro car elle est vraiment délicieuse et jusqu’à maintenant tout le monde l’a adoré!</p><p>Je suis donc très contente du thème choisi par épices&amp;moi car cela me permet de partager avec vous cette recette de verrine et j’espère qu’elle vous plaira!</p></div>
+
+    <div class="recipe-body">
+      <section class="recipe-ingredients">
+        <h3>Ingrédients</h3>
+        <div class="ingredient-group"><ul><li>mascarpone - 200g</li><li>oeufs - 3</li><li>petites queues de crevettes - 200g</li><li>pesto - 4 càs</li><li>tuc ou crackers - 6 environ</li><li>graines de pavot</li><li>sel</li></ul></div>
+      </section>
+
+      <section class="recipe-instructions">
+        <h3>Instructions</h3>
+        <ol>
+          <li>Séparer les blancs des jaunes</li>
+<li>Garder les jaunes pour la recette (garder les blancs pour faire des meringues plus tard ;) )</li>
+<li>Battre les jaunes avec une pincée de sel et ajouter le mascarpone pour obtenir un mélange bien homogène. Réserver au frais</li>
+<li>Mettre de coté une dizaines de queues de crevettes et mixer le reste. (Personnellement j’achète les paquets de 200gr de petites queues de crevettes au rayon surgelés ce qui est parfait pour ça!)</li>
+<li>Mélanger les crevettes mixées au mélange mascarpone-oeufs. Réserver au frais</li>
+<li>Écraser les Tucs (entre 6 et 8 tout dépend de la texture que vous souhaitez obtenir)</li>
+<li>Mélanger les Tucs au pesto</li>
+<li>Au fond de chaque verrines déposer la préparation pesto-tuc puis le mélange mascarpone-crevette</li>
+<li>Ajouter ensuite une ou deux queues de crevettes entières</li>
+<li>Saupoudrer de graines de pavot et décorer comme vous le souhaitez (si vous trouver des minis tucs c&#039;est pas mal d&#039;en planter un dans chaque verrines. Pour la photo j&#039;ai choisi de décorer avec des pignons de pin et du basilic pour rappeler le pesto!)</li>
+        </ol>
+        
+      </section>
+    </div>
+
+    
+  </article>
+</main>
+<footer class="site-footer">
+  <p>Cuisine moi un mouton &mdash; Recettes sauvegardées avec amour</p>
+  <p class="footer-note">Site reconstruit à partir des archives du blog original (2014-2019)</p>
+</footer>
+<script>
+function shareRecipe(title) {
+  var data = { title: title + ' - Cuisine moi un mouton', url: window.location.href };
+  if (navigator.share) {
+    navigator.share(data).catch(function(){});
+  } else {
+    navigator.clipboard.writeText(window.location.href).then(function() {
+      var btn = document.querySelector('.btn-share');
+      btn.textContent = 'Lien copié !';
+      setTimeout(function() { btn.textContent = 'Partager'; }, 2000);
+    });
+  }
+}
+</script>
+</body>
+</html>
