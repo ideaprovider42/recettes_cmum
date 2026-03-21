@@ -3,11 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#c0392b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Tartes sucrées - Cuisine moi un mouton</title>
   <link rel="stylesheet" href="../style.css">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="apple-touch-icon" href="../icon-192.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <script defer src="../favorites.js"></script>
   
 </head>
 <body>
@@ -21,6 +27,8 @@
       <a href="../index.html" class="">Accueil</a>
       <a href="../categories.html" class="active">Catégories</a>
       <a href="../toutes-les-recettes.html" class="">Toutes les recettes</a>
+      <a href="../favoris.html" class="nav-fav ">♥ Favoris</a>
+      <button id="pwa-install-btn" class="btn-install" style="display:none">Installer</button>
     </nav>
   </div>
 </header>
@@ -36,6 +44,7 @@
   <div class="recipe-card-image">
     <img src="../images/2018/12/Fromage-HD-1-3-300x300.jpg" alt="Tarte à l’ananas (meringuée)" loading="lazy">
     <span class="comment-badge">8 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Sucré</span><span class="category-tag">Tartes sucrées</span></div>
@@ -50,6 +59,7 @@
   <div class="recipe-card-image">
     <img src="../placeholder.svg" alt="Tartelettes aux figues et calisson" loading="lazy">
     <span class="comment-badge">2 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Recettes Végétariennes</span><span class="category-tag">Sucré</span><span class="category-tag">Tartes sucrées</span></div>
@@ -64,6 +74,7 @@
   <div class="recipe-card-image">
     <img src="../images/2018/07/Tartelettes-aux-pruneaux-1-4-300x300.jpg" alt="Tartelettes aux pruneaux d’Agen" loading="lazy">
     <span class="comment-badge">5 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Recettes Végétariennes</span><span class="category-tag">Sucré</span><span class="category-tag">Tartes sucrées</span></div>
@@ -78,6 +89,7 @@
   <div class="recipe-card-image">
     <img src="../placeholder.svg" alt="Fantastik chocolat coco" loading="lazy">
     <span class="comment-badge">5 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Recettes Végétariennes</span><span class="category-tag">Sucré</span><span class="category-tag">Tartes sucrées</span></div>
@@ -92,6 +104,7 @@
   <div class="recipe-card-image">
     <img src="../placeholder.svg" alt="Tartelettes banane chocolat" loading="lazy">
     <span class="comment-badge">2 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Sucré</span><span class="category-tag">Tartes sucrées</span></div>
@@ -106,6 +119,7 @@
   <div class="recipe-card-image">
     <img src="../placeholder.svg" alt="Tarte pommes poires et crème de calisson" loading="lazy">
     <span class="comment-badge">4 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Recettes Végétariennes</span><span class="category-tag">Sucré</span><span class="category-tag">Tartes sucrées</span></div>
@@ -120,6 +134,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/11/TAP-2-300x300.jpg" alt="Tarte fine aux pommes" loading="lazy">
     <span class="comment-badge">7 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Recettes Végétariennes</span><span class="category-tag">Sucré</span><span class="category-tag">Tartes sucrées</span></div>
@@ -134,6 +149,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/07/Pâte-brisée-sucrée-1-585x390.jpg" alt="Pâte brisée sucrée" loading="lazy">
     <span class="comment-badge">4 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Sucré</span><span class="category-tag">Tartes sucrées</span></div>
@@ -148,6 +164,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/07/tarte-abricot-rhubarbe-2-300x300.jpg" alt="Tarte abricot rhubarbe" loading="lazy">
     <span class="comment-badge">11 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Sucré</span><span class="category-tag">Tartes sucrées</span></div>
@@ -162,6 +179,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/05/Tarte-aux-fraises-3-300x300.jpg" alt="Tarte aux fraises" loading="lazy">
     <span class="comment-badge">13 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Sucré</span><span class="category-tag">Tartes sucrées</span></div>
@@ -176,6 +194,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/03/tarte-au-citron-meringuée-de-Pierre-Herme-7.jpg" alt="Tarte au citron meringuée" loading="lazy">
     <span class="comment-badge">19 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Noël</span><span class="category-tag">Saint-Valentin</span><span class="category-tag">Sucré</span></div>
@@ -190,6 +209,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/02/Dôme-de-mousse-1-300x300.jpg" alt="Dômes de mousse" loading="lazy">
     <span class="comment-badge">5 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Noël</span><span class="category-tag">Saint-Valentin</span><span class="category-tag">Sucré</span></div>
@@ -204,6 +224,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/01/Galette-des-rois-à-la-pomme-7-300x300.jpg" alt="Galette des rois à la pomme" loading="lazy">
     <span class="comment-badge">18 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span><span class="category-tag">Tartes sucrées</span></div>
@@ -218,6 +239,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/12/mini-galettes-mangue-amande-10-300x300.jpg" alt="Mini galettes amande et mangue" loading="lazy">
     <span class="comment-badge">12 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span><span class="category-tag">Tartes sucrées</span></div>
@@ -232,6 +254,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/11/Pumpkin-pie-4-300x300.jpg" alt="Pumpkin pie ou tarte à la citrouille" loading="lazy">
     <span class="comment-badge">15 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Noël</span><span class="category-tag">Sucré</span><span class="category-tag">Tartes sucrées</span></div>
@@ -246,6 +269,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/09/Tarte-aux-peches-et-framboises-13-300x300.jpg" alt="Tarte aux pêches et framboises" loading="lazy">
     <span class="comment-badge">27 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Sucré</span><span class="category-tag">Tartes sucrées</span></div>
@@ -260,6 +284,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/09/tarte-quadrillée-aux-mûres-et-aux-myrtilles-1-8-300x300.jpg" alt="Tarte quadrillée aux mûres" loading="lazy">
     <span class="comment-badge">5 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Sucré</span><span class="category-tag">Tartes sucrées</span></div>
@@ -274,6 +299,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/08/Tarte-aux-deux-citrons-noix-de-coco-1-300x300.jpg" alt="Tarte aux deux citrons" loading="lazy">
     <span class="comment-badge">14 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Sucré</span><span class="category-tag">Tartes sucrées</span></div>
@@ -288,6 +314,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/07/tarte-abricots-pistache-1-300x300.jpg" alt="Tarte abricots pistache" loading="lazy">
     <span class="comment-badge">18 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Sucré</span><span class="category-tag">Tartes sucrées</span></div>
@@ -302,6 +329,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/07/key-lime-pie-12-300x300.jpg" alt="Key lime pie" loading="lazy">
     <span class="comment-badge">8 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Desserts du monde</span><span class="category-tag">Sucré</span><span class="category-tag">Tartes sucrées</span></div>
@@ -316,6 +344,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/05/tartelettes-aux-fraises-1-300x300.jpg" alt="Tartelettes aux fraises" loading="lazy">
     <span class="comment-badge">21 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Sucré</span><span class="category-tag">Tartes sucrées</span></div>
@@ -330,6 +359,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/04/Fantastik-fraise-citron-basilic-1-300x300.jpg" alt="Fantastik fraises citron basilic" loading="lazy">
     <span class="comment-badge">62 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span><span class="category-tag">Tartes sucrées</span></div>
@@ -344,6 +374,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/02/tartes-rustique-aux-pommes-2-2-300x300.jpg" alt="Tarte aux pommes et caramel beurre salé" loading="lazy">
     <span class="comment-badge">13 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Sucré</span><span class="category-tag">Tartes sucrées</span></div>
@@ -358,6 +389,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/10/apple-pie-5-300x300.jpg" alt="Apple pie, la tarte aux pommes à l’américaine" loading="lazy">
     <span class="comment-badge">49 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Desserts du monde</span><span class="category-tag">Foodista Challenge</span><span class="category-tag">Sucré</span></div>
@@ -372,6 +404,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/08/tarte-fraise-citron-4-300x300.jpg" alt="Tarte fraise citron" loading="lazy">
     <span class="comment-badge">36 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Foodista Challenge</span><span class="category-tag">Sucré</span><span class="category-tag">Tartes sucrées</span></div>
@@ -386,6 +419,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/06/tarte-rustique-abricot-amande-13-300x300.jpg" alt="Tarte rustique abricots et amandes" loading="lazy">
     <span class="comment-badge">44 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span><span class="category-tag">Tartes sucrées</span></div>
@@ -400,6 +434,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/03/tarte-fraise-basilic-5-sur-6-300x300.jpg" alt="Des toutes mimis minis tartelettes fraise basilic" loading="lazy">
     <span class="comment-badge">35 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Sucré</span><span class="category-tag">Tartes sucrées</span></div>
@@ -414,6 +449,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/03/tarte-framboise-1-sur-4-300x300.jpg" alt="Tarte framboise pistache pour un dessert gourmand et léger" loading="lazy">
     <span class="comment-badge">44 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span><span class="category-tag">Tartes sucrées</span></div>
@@ -428,6 +464,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/02/tarte-poire-frangipane-6-sur-5-300x300.jpg" alt="Tarte aux poires chocolat et crème d’amande façon frangipane" loading="lazy">
     <span class="comment-badge">38 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Sucré</span><span class="category-tag">Tartes sucrées</span></div>
@@ -442,6 +479,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/06/tarte3-e1410118988987-300x300.jpg" alt="Tarte aux pommes bouquet de roses" loading="lazy">
     <span class="comment-badge">33 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Sucré</span><span class="category-tag">Tartes sucrées</span></div>

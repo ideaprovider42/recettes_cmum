@@ -3,11 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#c0392b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Collab Grand Frais® - Cuisine moi un mouton</title>
   <link rel="stylesheet" href="../style.css">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="apple-touch-icon" href="../icon-192.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <script defer src="../favorites.js"></script>
   
 </head>
 <body>
@@ -21,6 +27,8 @@
       <a href="../index.html" class="">Accueil</a>
       <a href="../categories.html" class="active">Catégories</a>
       <a href="../toutes-les-recettes.html" class="">Toutes les recettes</a>
+      <a href="../favoris.html" class="nav-fav ">♥ Favoris</a>
+      <button id="pwa-install-btn" class="btn-install" style="display:none">Installer</button>
     </nav>
   </div>
 </header>
@@ -36,6 +44,7 @@
   <div class="recipe-card-image">
     <img src="../images/2019/03/Anans-rôti-1-585x390.jpg" alt="Ananas rôtis" loading="lazy">
     <span class="comment-badge">3 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Collab Grand Frais®</span><span class="category-tag">Recettes Végétariennes</span><span class="category-tag">Sucré</span></div>

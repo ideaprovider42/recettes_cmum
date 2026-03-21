@@ -3,11 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#c0392b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Pâtes et Gnocchis - Cuisine moi un mouton</title>
   <link rel="stylesheet" href="../style.css">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="apple-touch-icon" href="../icon-192.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <script defer src="../favorites.js"></script>
   
 </head>
 <body>
@@ -21,6 +27,8 @@
       <a href="../index.html" class="">Accueil</a>
       <a href="../categories.html" class="active">Catégories</a>
       <a href="../toutes-les-recettes.html" class="">Toutes les recettes</a>
+      <a href="../favoris.html" class="nav-fav ">♥ Favoris</a>
+      <button id="pwa-install-btn" class="btn-install" style="display:none">Installer</button>
     </nav>
   </div>
 </header>
@@ -36,6 +44,7 @@
   <div class="recipe-card-image">
     <img src="../images/2019/05/Spaghettis-de-courgettes-1-300x300.jpg" alt="Spaghettis de courgettes" loading="lazy">
     <span class="comment-badge">3 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Pâtes et Gnocchis</span><span class="category-tag">Salé</span></div>
@@ -50,6 +59,7 @@
   <div class="recipe-card-image">
     <img src="../images/2019/03/coquillettes-1-585x390.jpg" alt="Coquillettes aux épinards, brie, citron et artichauts" loading="lazy">
     <span class="comment-badge">2 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Pâtes et Gnocchis</span><span class="category-tag">Salé</span></div>
@@ -64,6 +74,7 @@
   <div class="recipe-card-image">
     <img src="../images/2019/01/lasagnes-végétarienne-à-la-bolognaise-végétale-1-585x390.jpg" alt="Lasagnes végétariennes à la bolognaise végétale" loading="lazy">
     <span class="comment-badge">3 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Pâtes et Gnocchis</span><span class="category-tag">Recettes Végétariennes</span><span class="category-tag">Salé</span></div>
@@ -78,6 +89,7 @@
   <div class="recipe-card-image">
     <img src="../images/2018/11/Khao-soy-1-8-300x300.jpg" alt="Khao Soy en direct du marché de Chiang Mai" loading="lazy">
     <span class="comment-badge">5 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Pâtes et Gnocchis</span><span class="category-tag">Recettes Végétariennes</span><span class="category-tag">Repas du monde</span></div>
@@ -92,6 +104,7 @@
   <div class="recipe-card-image">
     <img src="../images/2018/09/Gnocchis-de-patate-douce-1-4-1170x1463.jpg" alt="Gnocchis de patate douce maison" loading="lazy">
     <span class="comment-badge">18 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Pâtes et Gnocchis</span><span class="category-tag">Recettes Végétariennes</span><span class="category-tag">Repas Light</span></div>
@@ -106,6 +119,7 @@
   <div class="recipe-card-image">
     <img src="../placeholder.svg" alt="Gratin de pâtes chèvre et épinards" loading="lazy">
     <span class="comment-badge">8 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Pâtes et Gnocchis</span><span class="category-tag">Recettes Végétariennes</span><span class="category-tag">Salé</span></div>
@@ -120,6 +134,7 @@
   <div class="recipe-card-image">
     <img src="../images/2018/03/spätzles-champignons-1-5-300x300.jpg" alt="Pâtes aux champignons munster et noix" loading="lazy">
     <span class="comment-badge">9 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Pâtes et Gnocchis</span><span class="category-tag">Recettes Végétariennes</span><span class="category-tag">Salé</span></div>
@@ -134,6 +149,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/11/Lasagnes-aux-champignons-3-300x300.jpg" alt="Lasagnes aux champignons" loading="lazy">
     <span class="comment-badge">26 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Pâtes et Gnocchis</span><span class="category-tag">Recettes Végétariennes</span><span class="category-tag">Salé</span></div>
@@ -148,6 +164,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/09/lasagne-veggie-300x300.jpg" alt="Lasagnes végétariennes" loading="lazy">
     <span class="comment-badge">25 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Pâtes et Gnocchis</span><span class="category-tag">Salade</span><span class="category-tag">Salé</span></div>
@@ -162,6 +179,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/07/salade-de-pâtes-2-585x390.jpg" alt="Salade de pâtes aux légumes" loading="lazy">
     <span class="comment-badge">4 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Pâtes et Gnocchis</span><span class="category-tag">Repas Light</span><span class="category-tag">Salade</span></div>
@@ -176,6 +194,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/02/Pesto-de-noix-4-300x300.jpg" alt="Pâtes au pesto de noix" loading="lazy">
     <span class="comment-badge">28 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Pâtes et Gnocchis</span><span class="category-tag">Repas Light</span><span class="category-tag">Salé</span></div>
@@ -190,6 +209,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/11/Macaroni-cheese-3-300x300.jpg" alt="Mac and Cheese aux deux choux" loading="lazy">
     <span class="comment-badge">8 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Pâtes et Gnocchis</span><span class="category-tag">Repas du monde</span><span class="category-tag">Salé</span></div>
@@ -204,6 +224,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/11/one-pan-pasta-11-300x300.jpg" alt="One pan pasta poulet champignons" loading="lazy">
     <span class="comment-badge">15 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Pâtes et Gnocchis</span><span class="category-tag">Salé</span></div>
@@ -218,6 +239,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/10/gnocchis-dautomne-8-300x300.jpg" alt="Poêlée de gnocchis aux champignons" loading="lazy">
     <span class="comment-badge">21 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Pâtes et Gnocchis</span><span class="category-tag">Salé</span></div>
@@ -232,6 +254,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/08/salade-de-pâtes-au-pesto-1-1-300x300.jpg" alt="Salade de pâtes au pesto" loading="lazy">
     <span class="comment-badge">20 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Pâtes et Gnocchis</span><span class="category-tag">Salade</span><span class="category-tag">Salé</span></div>
@@ -246,6 +269,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/05/Gnocchis-tartiflette-2-300x300.jpg" alt="Gnocchis tartiflette" loading="lazy">
     <span class="comment-badge">5 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Pâtes et Gnocchis</span><span class="category-tag">Salé</span></div>
@@ -260,6 +284,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/04/lasagne-à-la-bolognaise-3-300x300.jpg" alt="Lasagnes à la bolognaise" loading="lazy">
     <span class="comment-badge">27 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Pâtes et Gnocchis</span><span class="category-tag">Repas du monde</span><span class="category-tag">Salé</span></div>
@@ -274,6 +299,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/02/gnocchis-champignon-2-300x300.jpg" alt="Gnocchis aux champignons crème de parmesan" loading="lazy">
     <span class="comment-badge">22 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Pâtes et Gnocchis</span><span class="category-tag">Salé</span></div>
@@ -288,6 +314,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/09/salade-de-gnocchis-figue-jambon-de-pays-2-300x300.jpg" alt="Salade de figues" loading="lazy">
     <span class="comment-badge">8 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Pâtes et Gnocchis</span><span class="category-tag">Salade</span><span class="category-tag">Salé</span></div>
@@ -302,6 +329,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/04/Gnocchis-brocolis-1-sur-3-300x300.jpg" alt="Gnocchis brocolis, noix et crème de parmesan" loading="lazy">
     <span class="comment-badge">44 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Pâtes et Gnocchis</span><span class="category-tag">Salé</span></div>
@@ -316,6 +344,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/01/des-gnogno-3-sur-10-300x300.jpg" alt="Gnocchi maison à l’ail au basilic et au citron" loading="lazy">
     <span class="comment-badge">77 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Foodista Challenge</span><span class="category-tag">Pâtes et Gnocchis</span><span class="category-tag">Repas du monde</span></div>
@@ -330,6 +359,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/01/ravioli-3-sur-5-300x300.jpg" alt="Raviolis maison un peu de brousse et le reste" loading="lazy">
     <span class="comment-badge">21 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Pâtes et Gnocchis</span><span class="category-tag">Salé</span></div>
@@ -344,6 +374,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/12/Pâte-aux-epinards-6-sur-1-300x300.jpg" alt="Pâtes fraîches aux épinards" loading="lazy">
     <span class="comment-badge">13 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Pâtes et Gnocchis</span><span class="category-tag">Salé</span></div>
@@ -358,6 +389,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/10/ravioli-ricotta-epinard-7-sur-10-300x300.jpg" alt="Raviolis ricotta épinard parmesan #homemade" loading="lazy">
     <span class="comment-badge">28 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Pâtes et Gnocchis</span><span class="category-tag">Repas du monde</span><span class="category-tag">Salé</span></div>
@@ -372,6 +404,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/08/ravioli6-e1410118422255-300x300.jpg" alt="Ravioles Wonton jambon cream cheese" loading="lazy">
     <span class="comment-badge">24 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Pâtes et Gnocchis</span><span class="category-tag">Repas du monde</span><span class="category-tag">Salé</span></div>
@@ -386,6 +419,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/06/carbo-10-sur-3-300x300.jpg" alt="Pâtes à la Carbonara" loading="lazy">
     <span class="comment-badge">3 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Pâtes et Gnocchis</span><span class="category-tag">Salé</span></div>
@@ -400,6 +434,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/06/patesfraiches-e1410350454660-300x300.jpg" alt="Les pâtes fraîches" loading="lazy">
     <span class="comment-badge">4 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Pâtes et Gnocchis</span><span class="category-tag">Salé</span></div>

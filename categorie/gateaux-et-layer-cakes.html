@@ -3,11 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#c0392b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Gâteaux et Layer cakes - Cuisine moi un mouton</title>
   <link rel="stylesheet" href="../style.css">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="apple-touch-icon" href="../icon-192.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <script defer src="../favorites.js"></script>
   
 </head>
 <body>
@@ -21,6 +27,8 @@
       <a href="../index.html" class="">Accueil</a>
       <a href="../categories.html" class="active">Catégories</a>
       <a href="../toutes-les-recettes.html" class="">Toutes les recettes</a>
+      <a href="../favoris.html" class="nav-fav ">♥ Favoris</a>
+      <button id="pwa-install-btn" class="btn-install" style="display:none">Installer</button>
     </nav>
   </div>
 </header>
@@ -36,6 +44,7 @@
   <div class="recipe-card-image">
     <img src="../placeholder.svg" alt="Cake poire chocolat" loading="lazy">
     <span class="comment-badge">4 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Recettes Végétariennes</span><span class="category-tag">Sucré</span></div>
@@ -50,6 +59,7 @@
   <div class="recipe-card-image">
     <img src="../placeholder.svg" alt="Torta caprese {Fondant au chocolat et aux amandes}" loading="lazy">
     <span class="comment-badge">17 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Recettes Végétariennes</span><span class="category-tag">Sucré</span></div>
@@ -64,6 +74,7 @@
   <div class="recipe-card-image">
     <img src="../images/2018/06/Gateau-au-yaourt-et-au-citron-1-2-300x300.jpg" alt="Gâteau au yaourt au citron" loading="lazy">
     <span class="comment-badge">6 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
@@ -78,6 +89,7 @@
   <div class="recipe-card-image">
     <img src="../images/2018/04/Gâteau-fondant-framboises-et-pistaches-1-300x300.jpg" alt="Gâteau fondant framboises et pistaches" loading="lazy">
     <span class="comment-badge">18 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Recettes Végétariennes</span><span class="category-tag">Sucré</span></div>
@@ -92,6 +104,7 @@
   <div class="recipe-card-image">
     <img src="../placeholder.svg" alt="Brownie aux haricots rouges" loading="lazy">
     <span class="comment-badge">22 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Recettes Végétariennes</span><span class="category-tag">Sucré</span></div>
@@ -106,6 +119,7 @@
   <div class="recipe-card-image">
     <img src="../images/2018/02/Brownies-au-chocolat-et-caramel-beurre-salé-1-1170x663.jpg" alt="Brownies au chocolat et caramel beurre salé" loading="lazy">
     <span class="comment-badge">8 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Desserts du monde</span><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Recettes Végétariennes</span></div>
@@ -120,6 +134,7 @@
   <div class="recipe-card-image">
     <img src="../images/2018/02/Crumble-pomme-banane-crème-de-marrons-1-300x300.jpg" alt="Crumble pommes banane et crème de marron" loading="lazy">
     <span class="comment-badge">6 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Desserts du monde</span><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Recettes Végétariennes</span></div>
@@ -134,6 +149,7 @@
   <div class="recipe-card-image">
     <img src="../images/2018/01/namandier-3-1170x663.jpg" alt="Le namandier ou gâteau aux amandes" loading="lazy">
     <span class="comment-badge">21 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Recettes Végétariennes</span><span class="category-tag">Repas du monde</span></div>
@@ -148,6 +164,7 @@
   <div class="recipe-card-image">
     <img src="../images/2018/01/Gateau-de-crepes-framboise-calissons-1-2-300x300.jpg" alt="Gâteau de crêpes framboises et calisson" loading="lazy">
     <span class="comment-badge">13 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Chandeleur</span><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Recettes Végétariennes</span></div>
@@ -162,6 +179,7 @@
   <div class="recipe-card-image">
     <img src="../images/2018/01/Gateau-marbré-chocolat-matcha-3-300x300.jpg" alt="Gâteau marbré chocolat matcha" loading="lazy">
     <span class="comment-badge">8 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Recettes Végétariennes</span><span class="category-tag">Sucré</span></div>
@@ -176,6 +194,7 @@
   <div class="recipe-card-image">
     <img src="../images/2018/01/Madeleine-au-chocolat-3-300x300.jpg" alt="Madeleine au chocolat" loading="lazy">
     <span class="comment-badge">17 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Pâques</span><span class="category-tag">Recettes Végétariennes</span></div>
@@ -190,6 +209,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/10/Macarons-menthe-chocolat-1-3-300x300.jpg" alt="Macarons menthe chocolat" loading="lazy">
     <span class="comment-badge">8 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Noël</span><span class="category-tag">Sucré</span></div>
@@ -204,6 +224,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/09/cookies-au-chocolat-noisettes-et-caramel-1-2-300x300.jpg" alt="Cookies au chocolat noisettes et caramel" loading="lazy">
     <span class="comment-badge">4 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
@@ -218,6 +239,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/06/Cheesecake-framboises-pistache-2-300x300.jpg" alt="Cheesecake framboises pistache" loading="lazy">
     <span class="comment-badge">20 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
@@ -232,6 +254,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/04/Gateau-chocolat-au-lait-ricotta-1-9-300x300.jpg" alt="Gâteau au chocolat au lait aux fruits" loading="lazy">
     <span class="comment-badge">5 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Noël</span><span class="category-tag">Pâques</span></div>
@@ -246,6 +269,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/03/Kinder-délice-3-300x300.jpg" alt="La recette des Kinder Delice" loading="lazy">
     <span class="comment-badge">30 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
@@ -260,6 +284,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/03/Banana-bread-aux-pépites-de-chocolat-5-300x300.jpg" alt="La recette du banana bread (cake à la banane)" loading="lazy">
     <span class="comment-badge">20 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
@@ -274,6 +299,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/02/pavlova-au-chocolat-1-2-300x300.jpg" alt="Pavlova au chocolat" loading="lazy">
     <span class="comment-badge">12 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Desserts du monde</span><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Noël</span></div>
@@ -288,6 +314,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/01/Galette-des-rois-à-la-pomme-7-300x300.jpg" alt="Galette des rois à la pomme" loading="lazy">
     <span class="comment-badge">18 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span><span class="category-tag">Tartes sucrées</span></div>
@@ -302,6 +329,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/12/mini-galettes-mangue-amande-10-300x300.jpg" alt="Mini galettes amande et mangue" loading="lazy">
     <span class="comment-badge">12 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span><span class="category-tag">Tartes sucrées</span></div>
@@ -316,6 +344,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/12/Bûche-chocolat-caramel-1-300x300.jpg" alt="Bûche chocolat caramel" loading="lazy">
     <span class="comment-badge">21 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Noël</span><span class="category-tag">Sucré</span></div>
@@ -330,6 +359,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/12/Kipfler-à-la-vanille-1-300x300.jpg" alt="Vanille Kipferl" loading="lazy">
     <span class="comment-badge">13 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Noël</span><span class="category-tag">Sucré</span></div>
@@ -344,6 +374,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/12/Buche-de-noel-1-300x300.jpg" alt="Bûche citron framboise" loading="lazy">
     <span class="comment-badge">23 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Noël</span><span class="category-tag">Sucré</span></div>
@@ -358,6 +389,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/11/Crinkles-au-chocolat-8-300x300.jpg" alt="Crinkles au chocolat" loading="lazy">
     <span class="comment-badge">21 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Noël</span><span class="category-tag">Sucré</span></div>
@@ -372,6 +404,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/11/Bundt-cake-aux-amandes-et-thé-de-Noël-5-300x300.jpg" alt="Bundt cake aux amandes et thé de Noël" loading="lazy">
     <span class="comment-badge">15 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Noël</span><span class="category-tag">Sucré</span></div>
@@ -386,6 +419,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/11/Banoffee-pie-1-2-300x300.jpg" alt="Banoffee pie" loading="lazy">
     <span class="comment-badge">38 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
@@ -400,6 +434,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/10/Brownies-au-beurre-de-cacahuète-2-300x300.jpg" alt="Brownies au beurre de cacahuète" loading="lazy">
     <span class="comment-badge">26 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
@@ -414,6 +449,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/10/pates-1-2-300x300.jpg" alt="Charlotte aux poires" loading="lazy">
     <span class="comment-badge">13 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Noël</span><span class="category-tag">Sucré</span></div>
@@ -428,6 +464,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/09/cake-au-citron-2-2-300x300.jpg" alt="Cake au citron et framboises" loading="lazy">
     <span class="comment-badge">15 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
@@ -442,6 +479,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/06/Crumbcake-myrtilles-citron-3-300x300.jpg" alt="Crumbcake myrtilles citron" loading="lazy">
     <span class="comment-badge">9 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
@@ -456,6 +494,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/05/tiramisu-fraises-speculoos-6-300x300.jpg" alt="Tiramisu fraises spéculoos" loading="lazy">
     <span class="comment-badge">33 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
@@ -470,6 +509,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/05/mini-cheesecake-framboises-speculoos-1-300x300.jpg" alt="Cheesecakes spéculoos framboises et fraises" loading="lazy">
     <span class="comment-badge">26 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
@@ -484,6 +524,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/04/recette-Napolitain.-1-5-300x300.jpg" alt="Napolitain maison" loading="lazy">
     <span class="comment-badge">114 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
@@ -498,6 +539,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/04/Fantastik-fraise-citron-basilic-1-300x300.jpg" alt="Fantastik fraises citron basilic" loading="lazy">
     <span class="comment-badge">62 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span><span class="category-tag">Tartes sucrées</span></div>
@@ -512,6 +554,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/02/fondant-au-chocolat-1-3-300x300.jpg" alt="Fondant au chocolat" loading="lazy">
     <span class="comment-badge">15 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Saint-Valentin</span><span class="category-tag">Sucré</span></div>
@@ -526,6 +569,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/01/gâteau-de-crêpes-1-4-1-300x300.jpg" alt="Gâteau de crêpes" loading="lazy">
     <span class="comment-badge">25 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Chandeleur</span><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
@@ -540,6 +584,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/01/cheesecake-straciatella-4ok-300x300.jpg" alt="Cheesecake stracciatella" loading="lazy">
     <span class="comment-badge">36 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Saint-Valentin</span><span class="category-tag">Sucré</span></div>
@@ -554,6 +599,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/11/gateau-de-Noël-en-pâte-à-sucre-1-300x300.jpg" alt="Gâteau de Noël comme un paquet cadeau" loading="lazy">
     <span class="comment-badge">25 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Noël</span><span class="category-tag">Sucré</span></div>
@@ -568,6 +614,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/11/carrot-cake-1-300x300.jpg" alt="Le carrot cake" loading="lazy">
     <span class="comment-badge">65 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Noël</span><span class="category-tag">Sucré</span></div>
@@ -582,6 +629,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/11/pavlova-de-Noël-6-4-300x300.jpg" alt="Pavlova aux fruits rouges pour Noël" loading="lazy">
     <span class="comment-badge">19 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Desserts du monde</span><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Noël</span></div>
@@ -596,6 +644,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/10/cheesecake-oreo-in-a-jar-1-5-300x300.jpg" alt="Cheesecake in a jar à l’Oreo" loading="lazy">
     <span class="comment-badge">15 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Halloween</span><span class="category-tag">Recettes de fêtes</span></div>
@@ -610,6 +659,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/10/gateau-dhalloween-4-300x300.jpg" alt="Gâteau d’Halloween" loading="lazy">
     <span class="comment-badge">37 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Halloween</span><span class="category-tag">Sucré</span></div>
@@ -624,6 +674,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/09/choux-de-christophe-michalak-88-300x300.jpg" alt="Choux craquelin de Michalak" loading="lazy">
     <span class="comment-badge">61 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Foodista Challenge</span><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Noël</span></div>
@@ -638,6 +689,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/09/pinata-cake-12-300x300.jpg" alt="Pinata cake" loading="lazy">
     <span class="comment-badge">69 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
@@ -652,6 +704,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/06/tarte-rustique-abricot-amande-13-300x300.jpg" alt="Tarte rustique abricots et amandes" loading="lazy">
     <span class="comment-badge">44 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span><span class="category-tag">Tartes sucrées</span></div>
@@ -666,6 +719,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/06/clafoutis-aux-cerises-1-300x300.jpg" alt="Clafoutis aux cerises" loading="lazy">
     <span class="comment-badge">40 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
@@ -680,6 +734,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/06/fraisier-15-300x300.jpg" alt="Fraisier pistache" loading="lazy">
     <span class="comment-badge">25 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
@@ -694,6 +749,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/06/gateau-marbré-savane-1-300x300.jpg" alt="Gâteau marbré façon savane" loading="lazy">
     <span class="comment-badge">49 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Foodista Challenge</span><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
@@ -708,6 +764,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/05/Macaron-maison-meringue-italienne-2-300x300.jpg" alt="Macaron maison meringue italienne" loading="lazy">
     <span class="comment-badge">36 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
@@ -722,6 +779,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/05/banana-bread-au-chocolat-3-300x300.jpg" alt="Banana bread au chocolat" loading="lazy">
     <span class="comment-badge">41 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Desserts du monde</span><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
@@ -736,6 +794,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/05/slider-6-300x300.jpg" alt="Gâteau super fondant au chocolat avec une cuisson au bain marie" loading="lazy">
     <span class="comment-badge">34 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
@@ -750,6 +809,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/03/tarte-framboise-1-sur-4-300x300.jpg" alt="Tarte framboise pistache pour un dessert gourmand et léger" loading="lazy">
     <span class="comment-badge">44 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span><span class="category-tag">Tartes sucrées</span></div>
@@ -764,6 +824,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/03/cheesecake-oreo-sans-cuisson-4-sur-9-300x300.jpg" alt="Mini cheesecake Oreo sans cuisson" loading="lazy">
     <span class="comment-badge">64 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
@@ -778,6 +839,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/02/layer-cake-chocolat-10-sur-8-300x300.jpg" alt="Gâteau en pâte à sucre chocolat framboise" loading="lazy">
     <span class="comment-badge">38 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
@@ -792,6 +854,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/12/Profiteroles-au-chocolat-2-3-sur-6-300x300.jpg" alt="Profiteroles au chocolat" loading="lazy">
     <span class="comment-badge">14 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Noël</span><span class="category-tag">Recettes de fêtes</span></div>
@@ -806,6 +869,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/10/layer-cake-choco-noisette-10-sur-12-300x300.jpg" alt="Layer Cake chocolat noisettes pour un goûter d’automne" loading="lazy">
     <span class="comment-badge">73 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Foodista Challenge</span><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
@@ -820,6 +884,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/09/gateau-au-chocolat-sans-beurre-5-sur-13-300x300.jpg" alt="Gâteau au chocolat sans beurre" loading="lazy">
     <span class="comment-badge">33 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
@@ -834,6 +899,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/09/Rainbow-cake-22-sur-31-300x300.jpg" alt="Rainbow Cake" loading="lazy">
     <span class="comment-badge">165 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
@@ -848,6 +914,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/08/photo-300x300.jpg" alt="Smores bar" loading="lazy">
     <span class="comment-badge">13 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
@@ -862,6 +929,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/07/fredo11-e1410118758746-300x300.jpg" alt="Le « Frédo » : brownies cookies Oreo" loading="lazy">
     
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
@@ -876,6 +944,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/07/carrotcake1-e1410351263546-300x300.jpg" alt="Carrot Cupcakes" loading="lazy">
     <span class="comment-badge">9 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Cupcakes</span><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
@@ -890,6 +959,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/07/gingchoc2b-e1410118688840-300x300.jpg" alt="Fondant chocolat gingembre #SexyFood" loading="lazy">
     <span class="comment-badge">27 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
@@ -904,6 +974,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/06/cheesecake-nutella-e1410350250921-300x300.jpg" alt="Cheesecake Nutella" loading="lazy">
     <span class="comment-badge">2 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
@@ -918,6 +989,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/06/P1020168-e1408170834521-300x300.jpg" alt="Charlotte aux Fraises" loading="lazy">
     <span class="comment-badge">20 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>

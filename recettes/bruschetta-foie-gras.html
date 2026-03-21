@@ -3,11 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#c0392b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Délicieuses bruschettas au foie gras - Cuisine moi un mouton</title>
   <link rel="stylesheet" href="../style.css">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="apple-touch-icon" href="../icon-192.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <script defer src="../favorites.js"></script>
   
 </head>
 <body class="recipe-page">
@@ -21,6 +27,8 @@
       <a href="../index.html" class="">Accueil</a>
       <a href="../categories.html" class="">Catégories</a>
       <a href="../toutes-les-recettes.html" class="">Toutes les recettes</a>
+      <a href="../favoris.html" class="nav-fav ">♥ Favoris</a>
+      <button id="pwa-install-btn" class="btn-install" style="display:none">Installer</button>
     </nav>
   </div>
 </header>
@@ -41,6 +49,7 @@
     <div class="meta-item"><span class="meta-label">Publié le</span><span class="meta-value">22 novembre 2014</span></div>
   </div>
       <div class="recipe-actions">
+        <button id="fav-btn" class="btn-fav" data-slug="bruschetta-foie-gras"><span class="fav-icon">♡</span> <span class="fav-text">Ajouter aux favoris</span></button>
         <button class="btn-share" onclick="shareRecipe('Délicieuses bruschettas au foie gras')">🔗 Partager</button>
         <button class="btn-print" onclick="window.print()">🖨️ Imprimer</button>
       </div>

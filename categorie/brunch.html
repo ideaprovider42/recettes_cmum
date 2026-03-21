@@ -3,11 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#c0392b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Brunch - Cuisine moi un mouton</title>
   <link rel="stylesheet" href="../style.css">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="apple-touch-icon" href="../icon-192.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <script defer src="../favorites.js"></script>
   
 </head>
 <body>
@@ -21,6 +27,8 @@
       <a href="../index.html" class="">Accueil</a>
       <a href="../categories.html" class="active">Catégories</a>
       <a href="../toutes-les-recettes.html" class="">Toutes les recettes</a>
+      <a href="../favoris.html" class="nav-fav ">♥ Favoris</a>
+      <button id="pwa-install-btn" class="btn-install" style="display:none">Installer</button>
     </nav>
   </div>
 </header>
@@ -36,6 +44,7 @@
   <div class="recipe-card-image">
     <img src="../images/2019/02/Porridge-poire-coco-2.jpg" alt="Porridge poire coco" loading="lazy">
     <span class="comment-badge">3 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Recettes Végétariennes</span><span class="category-tag">Sucré</span></div>
@@ -50,6 +59,7 @@
   <div class="recipe-card-image">
     <img src="../images/2019/02/Tartines-pommes-poires-brie-et-jambon-cru-Aoste-1-3-585x390.jpg" alt="Tartines pommes poires Brie et jambon cru Aoste" loading="lazy">
     <span class="comment-badge">1 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Apéritif</span><span class="category-tag">Brunch</span><span class="category-tag">Salé</span></div>
@@ -64,6 +74,7 @@
   <div class="recipe-card-image">
     <img src="../images/2019/01/Frites-de-patates-douces-1-300x300.jpg" alt="Frites de patate douce" loading="lazy">
     <span class="comment-badge">4 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Recettes Végétariennes</span><span class="category-tag">Salé</span></div>
@@ -78,6 +89,7 @@
   <div class="recipe-card-image">
     <img src="../images/2019/01/Galette-de-pois-chiche-1-4-300x300.jpg" alt="Galettes de pois chiches" loading="lazy">
     <span class="comment-badge">6 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Recettes Végétariennes</span><span class="category-tag">Salé</span></div>
@@ -92,6 +104,7 @@
   <div class="recipe-card-image">
     <img src="../placeholder.svg" alt="Kanelbullar, brioche Suédoise à la cannelle" loading="lazy">
     <span class="comment-badge">9 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Boulange</span><span class="category-tag">Brunch</span><span class="category-tag">Desserts du monde</span></div>
@@ -106,6 +119,7 @@
   <div class="recipe-card-image">
     <img src="../placeholder.svg" alt="Brioche roulée au chocolat miel et amandes" loading="lazy">
     <span class="comment-badge">6 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Desserts du monde</span><span class="category-tag">Recettes Végétariennes</span></div>
@@ -120,6 +134,7 @@
   <div class="recipe-card-image">
     <img src="../images/2018/07/test-1-3-300x300.jpg" alt="Pancakes légers « super healthy »" loading="lazy">
     <span class="comment-badge">7 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Chandeleur</span><span class="category-tag">Desserts du monde</span></div>
@@ -134,6 +149,7 @@
   <div class="recipe-card-image">
     <img src="../images/2018/07/Socca-Nicoise-1-3-300x300.jpg" alt="Socca au four" loading="lazy">
     <span class="comment-badge">7 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Apéritif</span><span class="category-tag">Boulange</span><span class="category-tag">Brunch</span></div>
@@ -148,6 +164,7 @@
   <div class="recipe-card-image">
     <img src="../images/2018/06/gaspacho-andalou-1-2-300x300.jpg" alt="Gaspacho Andalou" loading="lazy">
     <span class="comment-badge">5 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Apéritif</span><span class="category-tag">Brunch</span><span class="category-tag">Recettes Végétariennes</span></div>
@@ -162,6 +179,7 @@
   <div class="recipe-card-image">
     <img src="../images/2018/06/Verrines-4-300x300.jpg" alt="Verrines pomme, betterave et camembert Jort" loading="lazy">
     <span class="comment-badge">2 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Apéritif</span><span class="category-tag">Brunch</span><span class="category-tag">Salé</span></div>
@@ -176,6 +194,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/12/tiramisu-7-300x300.jpg" alt="Tiramisu au nougat blanc" loading="lazy">
     <span class="comment-badge">19 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Desserts du monde</span><span class="category-tag">Recettes Végétariennes</span></div>
@@ -190,6 +209,7 @@
   <div class="recipe-card-image">
     <img src="../images/2018/05/Tiramisu-au-parmesan-1-300x300.jpg" alt="Tiramisu au parmesan et pesto rosso (aux tomates)" loading="lazy">
     <span class="comment-badge">4 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Apéritif</span><span class="category-tag">Brunch</span><span class="category-tag">Salé</span></div>
@@ -204,6 +224,7 @@
   <div class="recipe-card-image">
     <img src="../images/2018/03/Hot-dog-végétarien-1-300x300.jpg" alt="Hot-dog végétariens (aux champignons)" loading="lazy">
     <span class="comment-badge">8 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Hamburgers</span><span class="category-tag">Recettes Végétariennes</span></div>
@@ -218,6 +239,7 @@
   <div class="recipe-card-image">
     <img src="../placeholder.svg" alt="Brioche perdue salée parmesan et noix" loading="lazy">
     <span class="comment-badge">12 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Recettes Végétariennes</span><span class="category-tag">Salé</span></div>
@@ -232,6 +254,7 @@
   <div class="recipe-card-image">
     <img src="../images/2018/02/Baghrirs-2-2-1170x780.jpg" alt="Baghrirs, crêpes mille trous" loading="lazy">
     <span class="comment-badge">26 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Chandeleur</span><span class="category-tag">Desserts du monde</span></div>
@@ -246,6 +269,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/12/Mousse-au-chococolat-1-300x300.jpg" alt="Mousse au chocolat" loading="lazy">
     <span class="comment-badge">4 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Noël</span><span class="category-tag">Pâques</span></div>
@@ -260,6 +284,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/12/croissant-1-2-300x300.jpg" alt="Mini croissants apéro au saumon" loading="lazy">
     <span class="comment-badge">10 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Apéritif</span><span class="category-tag">Brunch</span><span class="category-tag">De la mer</span></div>
@@ -274,6 +299,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/12/chocolat-chaud-sans-lactose-1-300x300.jpg" alt="Chocolat chaud sans lactose" loading="lazy">
     <span class="comment-badge">13 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Boissons</span><span class="category-tag">Brunch</span><span class="category-tag">Recettes Végétariennes</span></div>
@@ -288,6 +314,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/12/burger-BD-1-300x300.jpg" alt="Burger végétarien aux haricots rouges" loading="lazy">
     <span class="comment-badge">16 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Apéritif</span><span class="category-tag">Boulange</span><span class="category-tag">Brunch</span></div>
@@ -302,6 +329,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/11/Pate-a-tartiner-2-300x300.jpg" alt="Pâte a tartiner rapide" loading="lazy">
     <span class="comment-badge">52 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Sucré</span></div>
@@ -316,6 +344,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/09/Croissant-1-6-300x300.jpg" alt="Croissants salés au fromage, pesto et figues" loading="lazy">
     <span class="comment-badge">10 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Apéritif</span><span class="category-tag">Brunch</span><span class="category-tag">Salé</span></div>
@@ -330,6 +359,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/09/hd-1-3-300x300.jpg" alt="Pancakes au chocolat" loading="lazy">
     <span class="comment-badge">13 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Sucré</span></div>
@@ -344,6 +374,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/09/smoothie-bowl-1-2-300x300.jpg" alt="Smoothie bowl sans lactose mangue ananas" loading="lazy">
     <span class="comment-badge">11 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Boissons</span><span class="category-tag">Brunch</span><span class="category-tag">Repas Light</span></div>
@@ -358,6 +389,7 @@
   <div class="recipe-card-image">
     <img src="../placeholder.svg" alt="Tartine de truite fumée et chèvre frais" loading="lazy">
     <span class="comment-badge">13 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Apéritif</span><span class="category-tag">Brunch</span><span class="category-tag">Salé</span></div>
@@ -372,6 +404,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/09/pecghes-roties-4-300x300.jpg" alt="Pêches rôties au miel" loading="lazy">
     <span class="comment-badge">8 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Sucré</span></div>
@@ -386,6 +419,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/08/brioche-perdue-300x300.jpg" alt="Brioche perdue au chocolat" loading="lazy">
     <span class="comment-badge">9 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Chandeleur</span><span class="category-tag">Saint-Valentin</span></div>
@@ -400,6 +434,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/07/Beurre-de-cacahuete-1-4-300x300.jpg" alt="Beurre de cacahuètes maison" loading="lazy">
     <span class="comment-badge">12 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Ingrédients &amp; co</span><span class="category-tag">Sucré</span></div>
@@ -414,6 +449,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/05/Granola-aux-amandes-1-300x300.jpg" alt="Granola aux amandes" loading="lazy">
     <span class="comment-badge">1 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Sucré</span></div>
@@ -428,6 +464,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/03/Banana-bread-aux-pépites-de-chocolat-5-300x300.jpg" alt="La recette du banana bread (cake à la banane)" loading="lazy">
     <span class="comment-badge">20 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
@@ -442,6 +479,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/03/PHOTo_-300x300.jpg" alt="Chaussons aux poires amandes chocolat" loading="lazy">
     <span class="comment-badge">18 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Pâques</span><span class="category-tag">Sucré</span></div>
@@ -456,6 +494,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/02/Riz-orange-avocat-3-300x300.jpg" alt="Salade de riz orange avocat" loading="lazy">
     <span class="comment-badge">10 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Repas Light</span><span class="category-tag">Salade</span></div>
@@ -470,6 +509,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/02/porridge-mandarine-2-300x300.jpg" alt="Porridge mandarine chocolat" loading="lazy">
     <span class="comment-badge">16 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Repas Light</span><span class="category-tag">Sucré</span></div>
@@ -484,6 +524,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/02/Crêpes-de-Pierre-Hermé-1-2-300x300.jpg" alt="Pâte à crêpes" loading="lazy">
     <span class="comment-badge">14 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Chandeleur</span><span class="category-tag">Sucré</span></div>
@@ -498,6 +539,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/01/Migliaccioli-1-2-300x300.jpg" alt="Migliaccioli" loading="lazy">
     <span class="comment-badge">27 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Chandeleur</span><span class="category-tag">Desserts du monde</span></div>
@@ -512,6 +554,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/01/Brioche-au-chocolat-3-300x300.jpg" alt="Brioche étoile au chocolat" loading="lazy">
     <span class="comment-badge">20 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Boulange</span><span class="category-tag">Brunch</span><span class="category-tag">Noël</span></div>
@@ -526,6 +569,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/01/Confiture-de-clémentines-2-1-300x300.jpg" alt="Confiture de Clémentines (corse)" loading="lazy">
     <span class="comment-badge">21 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Sucré</span></div>
@@ -540,6 +584,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/10/Porridge-pomme-cannelle-3.jpg" alt="Porridge pomme cannelle" loading="lazy">
     <span class="comment-badge">23 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Sucré</span></div>
@@ -554,6 +599,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/09/Bol-gourmand-2-300x300.jpg" alt="Bananes rôties cookies aux flocons d’avoine et chocolat" loading="lazy">
     <span class="comment-badge">20 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Repas Light</span><span class="category-tag">Sucré</span></div>
@@ -568,6 +614,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/08/crêpes-perdues-6-300x300.jpg" alt="Crêpes perdues" loading="lazy">
     <span class="comment-badge">23 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Chandeleur</span><span class="category-tag">Sucré</span></div>
@@ -582,6 +629,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/07/scones-ovive-SRVB-7-300x300.jpg" alt="Scones salés" loading="lazy">
     <span class="comment-badge">13 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Apéritif</span><span class="category-tag">Brunch</span><span class="category-tag">De la mer</span></div>
@@ -596,6 +644,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/06/smoothie-bowl-chocolat-2-300x300.jpg" alt="Smoothie bowl chocolat" loading="lazy">
     <span class="comment-badge">11 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Boissons</span><span class="category-tag">Brunch</span><span class="category-tag">Repas Light</span></div>
@@ -610,6 +659,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/06/salade-de-fraises-menthe-et-citron-5-300x300.jpg" alt="Salade de fraises menthe et citron" loading="lazy">
     <span class="comment-badge">12 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Salade</span><span class="category-tag">Sucré</span></div>
@@ -624,6 +674,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/04/recette-de-pancakes-3-2-300x300.jpg" alt="La recette de pancakes" loading="lazy">
     <span class="comment-badge">51 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Sucré</span></div>
@@ -638,6 +689,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/04/Porridge-banane-orange-sanguine-6-300x300.jpg" alt="Porridge banane orange sanguine" loading="lazy">
     <span class="comment-badge">17 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Repas Light</span><span class="category-tag">Sucré</span></div>
@@ -652,6 +704,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/03/Mouna-1-300x300.jpg" alt="La mouna" loading="lazy">
     <span class="comment-badge">71 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Boulange</span><span class="category-tag">Brunch</span><span class="category-tag">Desserts du monde</span></div>
@@ -666,6 +719,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/03/oeufs-de-paques-4-300x300.jpg" alt="Cheesecake de Pâques comme un œuf à la coque" loading="lazy">
     <span class="comment-badge">21 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Pâques</span><span class="category-tag">Sucré</span></div>
@@ -680,6 +734,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/03/tartines-brie-et-pommes-1-4-300x300.jpg" alt="Tartines aux pommes et au brie" loading="lazy">
     <span class="comment-badge">17 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Salé</span><span class="category-tag">Sandwiches</span></div>
@@ -694,6 +749,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/02/Cinnamon-rolls.-4-300x300.jpg" alt="Cinnamon rolls" loading="lazy">
     <span class="comment-badge">67 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Boulange</span><span class="category-tag">Brunch</span><span class="category-tag">Desserts du monde</span></div>
@@ -708,6 +764,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/01/crêpes-au-chocolat-1-300x300.jpg" alt="Crêpes au chocolat" loading="lazy">
     <span class="comment-badge">13 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Chandeleur</span><span class="category-tag">Sucré</span></div>
@@ -722,6 +779,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/01/crêpes-Suzette-1-300x300.jpg" alt="Les crêpes Suzette" loading="lazy">
     <span class="comment-badge">3 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Chandeleur</span><span class="category-tag">Sucré</span></div>
@@ -736,6 +794,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/01/confiture-pomme-cannele-5-300x300.jpg" alt="Confiture pomme cannelle" loading="lazy">
     <span class="comment-badge">27 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Sucré</span></div>
@@ -750,6 +809,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/01/pop-tarts-v-1-3-300x300.jpg" alt="Pop-tarts" loading="lazy">
     <span class="comment-badge">23 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Saint-Valentin</span><span class="category-tag">Sucré</span></div>
@@ -764,6 +824,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/12/energy-balls-amnde-1-2-300x300.jpg" alt="Energy balls" loading="lazy">
     <span class="comment-badge">12 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Noël</span><span class="category-tag">Repas Light</span></div>
@@ -778,6 +839,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/11/recette-oreo-maison-11-300x300.jpg" alt="Recette des Oreo maison" loading="lazy">
     <span class="comment-badge">50 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Desserts du monde</span><span class="category-tag">Sucré</span></div>
@@ -792,6 +854,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/10/donuts-8-300x300.jpg" alt="La recette des Donuts" loading="lazy">
     <span class="comment-badge">38 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Boulange</span><span class="category-tag">Brunch</span><span class="category-tag">Desserts du monde</span></div>
@@ -806,6 +869,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/11/gaufres-michalak-1-300x300.jpg" alt="Les gaufres de Christophe Michalak" loading="lazy">
     <span class="comment-badge">26 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Saint-Valentin</span><span class="category-tag">Sucré</span></div>
@@ -820,6 +884,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/09/pâte-à-tartiner-de-christophe-michalak-5-300x300.jpg" alt="Pâte à tartiner de Christophe Michalak" loading="lazy">
     <span class="comment-badge">100 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Sucré</span></div>
@@ -834,6 +899,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/09/tartine-avocat-4-300x300.jpg" alt="Tartines d&#039;avocats" loading="lazy">
     <span class="comment-badge">3 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Apéritif</span><span class="category-tag">Brunch</span><span class="category-tag">Salé</span></div>
@@ -848,6 +914,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/08/tarte-tomate-mozza-1-2-300x300.jpg" alt="Chia smoothie fraise banane" loading="lazy">
     <span class="comment-badge">12 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Boissons</span><span class="category-tag">Brunch</span><span class="category-tag">Sucré</span></div>
@@ -862,6 +929,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/07/pancakes-ricotta-2-300x300.jpg" alt="Pancakes ricotta" loading="lazy">
     <span class="comment-badge">26 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Saint-Valentin</span><span class="category-tag">Sucré</span></div>
@@ -876,6 +944,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/03/porridge-3-sur-4-300x300.jpg" alt="Porridge framboise amande et lait d’amande" loading="lazy">
     <span class="comment-badge">27 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Repas Light</span><span class="category-tag">Sucré</span></div>
@@ -890,6 +959,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/11/egg-muffin-8-sur-8-300x300.jpg" alt="Qui vient bruncher? Je vous prépare un egg muffin!" loading="lazy">
     <span class="comment-badge">58 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Foodista Challenge</span><span class="category-tag">Salé</span></div>
@@ -904,6 +974,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/11/croissant-nutella-4-sur-1-300x300.jpg" alt="Croissant Nutella tout mini et tout mimi" loading="lazy">
     <span class="comment-badge">16 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Sucré</span></div>
@@ -918,6 +989,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/09/granola-16-sur-17-300x300.jpg" alt="Granola Homemade" loading="lazy">
     <span class="comment-badge">17 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Sucré</span></div>
@@ -932,6 +1004,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/08/crepes-e1410117961725-300x300.jpg" alt="Crêpes du dimanche soir" loading="lazy">
     <span class="comment-badge">12 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Chandeleur</span><span class="category-tag">Sucré</span></div>
@@ -946,6 +1019,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/06/muffinphtot3-e1410350539289-300x300.jpg" alt="Muffins Anglais" loading="lazy">
     <span class="comment-badge">13 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Boulange</span><span class="category-tag">Brunch</span><span class="category-tag">Sucré</span></div>

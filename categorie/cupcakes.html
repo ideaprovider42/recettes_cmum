@@ -3,11 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#c0392b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Cupcakes - Cuisine moi un mouton</title>
   <link rel="stylesheet" href="../style.css">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="apple-touch-icon" href="../icon-192.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <script defer src="../favorites.js"></script>
   
 </head>
 <body>
@@ -21,6 +27,8 @@
       <a href="../index.html" class="">Accueil</a>
       <a href="../categories.html" class="active">Catégories</a>
       <a href="../toutes-les-recettes.html" class="">Toutes les recettes</a>
+      <a href="../favoris.html" class="nav-fav ">♥ Favoris</a>
+      <button id="pwa-install-btn" class="btn-install" style="display:none">Installer</button>
     </nav>
   </div>
 </header>
@@ -36,6 +44,7 @@
   <div class="recipe-card-image">
     <img src="../placeholder.svg" alt="Cupcakes citron et Calisson" loading="lazy">
     <span class="comment-badge">1 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Cupcakes</span><span class="category-tag">Cupcakes, cake pops &amp; co</span><span class="category-tag">Noël</span></div>
@@ -50,6 +59,7 @@
   <div class="recipe-card-image">
     <img src="../images/2018/02/Cupcakes-aux-schokobons-1-5-300x300.jpg" alt="Cupcakes Schokobons" loading="lazy">
     <span class="comment-badge">22 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Cupcakes</span><span class="category-tag">Cupcakes, cake pops &amp; co</span><span class="category-tag">Pâques</span></div>
@@ -64,6 +74,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/08/cupcakes-chocolat-fraise-7-300x300.jpg" alt="Cupcakes chocolat fraise" loading="lazy">
     <span class="comment-badge">15 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Cupcakes</span><span class="category-tag">Cupcakes, cake pops &amp; co</span><span class="category-tag">Sucré</span></div>
@@ -78,6 +89,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/07/cupcakes-citron-coco-1-300x300.jpg" alt="Cucpake citron coco" loading="lazy">
     <span class="comment-badge">30 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Cupcakes</span><span class="category-tag">Cupcakes, cake pops &amp; co</span><span class="category-tag">Sucré</span></div>
@@ -92,6 +104,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/02/cupcake-tagada-2-300x300.jpg" alt="Cupcake tagada pour un goûter ultra girly!" loading="lazy">
     <span class="comment-badge">56 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Cupcakes</span><span class="category-tag">Cupcakes, cake pops &amp; co</span><span class="category-tag">Foodista Challenge</span></div>
@@ -106,6 +119,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/01/cupcake-speculoos-et-caramel-au-beurre-salé-9-sur-9-300x300.jpg" alt="Cupcake speculoos caramel au beurre salé" loading="lazy">
     <span class="comment-badge">59 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Cupcakes</span><span class="category-tag">Cupcakes, cake pops &amp; co</span><span class="category-tag">Sucré</span></div>
@@ -120,6 +134,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/12/cupcakes-ferrero-rocher-nutella-27-sur-2-300x300.jpg" alt="Cupcakes Ferrero Rocher Nutella" loading="lazy">
     <span class="comment-badge">23 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Cupcakes</span><span class="category-tag">Cupcakes, cake pops &amp; co</span><span class="category-tag">Noël</span></div>
@@ -134,6 +149,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/10/cupcakes-halloween-sorciere-7-sur-7-300x300.jpg" alt="Cupcakes Halloween" loading="lazy">
     <span class="comment-badge">34 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Cupcakes</span><span class="category-tag">Cupcakes, cake pops &amp; co</span><span class="category-tag">Halloween</span></div>
@@ -148,6 +164,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/10/bouquet-de-roses-cupcakes-11-sur-14-300x300.jpg" alt="Bouquet cupcakes de la mariée {« YES I DO »}" loading="lazy">
     <span class="comment-badge">98 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Cupcakes</span><span class="category-tag">Cupcakes, cake pops &amp; co</span><span class="category-tag">Sucré</span></div>
@@ -162,6 +179,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/09/cupcakes-pommes-foodista-4-sur-1-300x300.jpg" alt="Quand un cupcake se déguise en pomme..." loading="lazy">
     <span class="comment-badge">55 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Cupcakes</span><span class="category-tag">Cupcakes, cake pops &amp; co</span><span class="category-tag">Foodista Challenge</span></div>
@@ -176,6 +194,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/09/Cupcake-Oreo-300x300.jpg" alt="Cupcakes aux Oreo" loading="lazy">
     <span class="comment-badge">70 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Cupcakes</span><span class="category-tag">Cupcakes, cake pops &amp; co</span><span class="category-tag">Sucré</span></div>
@@ -190,6 +209,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/08/cupcake-e1410351632160-300x300.jpg" alt="Cupcake fourrés à la confiture de fruits rouges" loading="lazy">
     <span class="comment-badge">13 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Cupcakes</span><span class="category-tag">Cupcakes, cake pops &amp; co</span><span class="category-tag">Sucré</span></div>
@@ -204,6 +224,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/08/fin-e1410351663534-300x300.jpg" alt="Réussir sa crème au beurre à la meringue Suisse :" loading="lazy">
     <span class="comment-badge">106 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Cupcakes</span><span class="category-tag">Ingrédients &amp; co</span><span class="category-tag">Sucré</span></div>
@@ -218,6 +239,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/07/carrotcake1-e1410351263546-300x300.jpg" alt="Carrot Cupcakes" loading="lazy">
     <span class="comment-badge">9 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Cupcakes</span><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
@@ -232,6 +254,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/06/tapas1bis-e1410119121811-300x300.jpg" alt="Minis cupcakes au chorizo, oignons caramélisés et parmesan {Battle food #21}" loading="lazy">
     <span class="comment-badge">25 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Apéritif</span><span class="category-tag">Cupcakes</span><span class="category-tag">Cupcakes, cake pops &amp; co</span></div>
@@ -246,6 +269,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/06/Pist1-e1430836374254-300x300.jpg" alt="Cupcake pistache – Chantilly chocolat blanc" loading="lazy">
     <span class="comment-badge">9 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Cupcakes</span><span class="category-tag">Cupcakes, cake pops &amp; co</span><span class="category-tag">Sucré</span></div>
@@ -260,6 +284,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/06/cupcake-kinder-bueno-3-sur-4-300x300.jpg" alt="Cupcake Kinder Bueno" loading="lazy">
     <span class="comment-badge">167 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Cupcakes</span><span class="category-tag">Cupcakes, cake pops &amp; co</span><span class="category-tag">Sucré</span></div>

@@ -3,11 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#c0392b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Halloween - Cuisine moi un mouton</title>
   <link rel="stylesheet" href="../style.css">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="apple-touch-icon" href="../icon-192.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <script defer src="../favorites.js"></script>
   
 </head>
 <body>
@@ -21,6 +27,8 @@
       <a href="../index.html" class="">Accueil</a>
       <a href="../categories.html" class="active">Catégories</a>
       <a href="../toutes-les-recettes.html" class="">Toutes les recettes</a>
+      <a href="../favoris.html" class="nav-fav ">♥ Favoris</a>
+      <button id="pwa-install-btn" class="btn-install" style="display:none">Installer</button>
     </nav>
   </div>
 </header>
@@ -36,6 +44,7 @@
   <div class="recipe-card-image">
     <img src="../images/2018/10/Cookies-605.jpg" alt="Cookies au potiron" loading="lazy">
     <span class="comment-badge">3 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Halloween</span><span class="category-tag">Recettes Végétariennes</span><span class="category-tag">Sucré</span></div>
@@ -50,6 +59,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/10/cheesecake-oreo-in-a-jar-1-5-300x300.jpg" alt="Cheesecake in a jar à l’Oreo" loading="lazy">
     <span class="comment-badge">15 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Halloween</span><span class="category-tag">Recettes de fêtes</span></div>
@@ -64,6 +74,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/10/Bruschetta-poire-fourme-dambert-11-300x300.jpg" alt="Cake pops sorcières d’Halloween avec moule à cake pops" loading="lazy">
     <span class="comment-badge">20 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Cake pops</span><span class="category-tag">Halloween</span><span class="category-tag">Sucré</span></div>
@@ -78,6 +89,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/10/gateau-dhalloween-4-300x300.jpg" alt="Gâteau d’Halloween" loading="lazy">
     <span class="comment-badge">37 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Halloween</span><span class="category-tag">Sucré</span></div>
@@ -92,6 +104,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/10/cupcakes-halloween-sorciere-7-sur-7-300x300.jpg" alt="Cupcakes Halloween" loading="lazy">
     <span class="comment-badge">34 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Cupcakes</span><span class="category-tag">Cupcakes, cake pops &amp; co</span><span class="category-tag">Halloween</span></div>
@@ -106,6 +119,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/10/cake-pops-halloween-24-sur-15-300x300.jpg" alt="Cake Pops Halloween" loading="lazy">
     <span class="comment-badge">20 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Cake pops</span><span class="category-tag">Cupcakes, cake pops &amp; co</span><span class="category-tag">Halloween</span></div>

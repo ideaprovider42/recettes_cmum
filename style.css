@@ -497,7 +497,7 @@ main {
   margin-top: 1.2rem;
 }
 
-.btn-share, .btn-print {
+.btn-share, .btn-print, .btn-fav {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
@@ -844,6 +844,122 @@ main {
 /* Recipe section titles on home */
 .recipe-section {
   margin-bottom: 2.5rem;
+}
+
+/* ===========================
+   Favorites
+   =========================== */
+
+/* Heart indicator on recipe cards */
+.fav-indicator {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  background: rgba(255,255,255,0.85);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all var(--transition);
+  color: var(--color-text-lighter);
+  z-index: 2;
+  line-height: 1;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.fav-indicator:hover {
+  background: rgba(255,255,255,1);
+  transform: scale(1.15);
+  color: var(--color-primary);
+}
+
+.fav-indicator.is-fav {
+  color: var(--color-primary);
+  background: rgba(255,255,255,0.95);
+}
+
+/* Favorite button on recipe page */
+.btn-fav {
+  border-color: var(--color-primary-light);
+}
+
+.btn-fav .fav-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.btn-fav:hover {
+  border-color: var(--color-primary);
+  background: #fff0f0;
+  color: var(--color-primary);
+}
+
+.btn-fav.is-fav {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+
+.btn-fav.is-fav:hover {
+  background: var(--color-primary-dark);
+}
+
+/* Nav favorite link */
+.nav-fav {
+  color: var(--color-primary) !important;
+}
+
+/* Empty favorites page */
+.empty-favorites {
+  text-align: center;
+  padding: 4rem 2rem;
+  grid-column: 1 / -1;
+}
+
+.empty-favorites .empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.3;
+}
+
+.empty-favorites p {
+  color: var(--color-text-light);
+  margin-bottom: 0.5rem;
+}
+
+.empty-favorites .btn-see-all {
+  margin-top: 1.5rem;
+}
+
+/* ===========================
+   PWA Install Button
+   =========================== */
+.btn-install {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 1rem;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+  min-height: 36px;
+}
+
+.btn-install:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-1px);
 }
 
 /* ===========================

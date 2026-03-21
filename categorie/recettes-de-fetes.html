@@ -3,11 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#c0392b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Recettes de fêtes - Cuisine moi un mouton</title>
   <link rel="stylesheet" href="../style.css">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="apple-touch-icon" href="../icon-192.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <script defer src="../favorites.js"></script>
   
 </head>
 <body>
@@ -21,6 +27,8 @@
       <a href="../index.html" class="">Accueil</a>
       <a href="../categories.html" class="active">Catégories</a>
       <a href="../toutes-les-recettes.html" class="">Toutes les recettes</a>
+      <a href="../favoris.html" class="nav-fav ">♥ Favoris</a>
+      <button id="pwa-install-btn" class="btn-install" style="display:none">Installer</button>
     </nav>
   </div>
 </header>
@@ -36,6 +44,7 @@
   <div class="recipe-card-image">
     <img src="../placeholder.svg" alt="Eton mess poires et crème de marrons" loading="lazy">
     <span class="comment-badge">2 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Noël</span><span class="category-tag">Recettes de fêtes</span><span class="category-tag">Sucré</span></div>
@@ -50,6 +59,7 @@
   <div class="recipe-card-image">
     <img src="../images/2018/02/Cupcakes-aux-schokobons-1-5-300x300.jpg" alt="Cupcakes Schokobons" loading="lazy">
     <span class="comment-badge">22 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Cupcakes</span><span class="category-tag">Cupcakes, cake pops &amp; co</span><span class="category-tag">Pâques</span></div>
@@ -64,6 +74,7 @@
   <div class="recipe-card-image">
     <img src="../images/2018/02/Baghrirs-2-2-1170x780.jpg" alt="Baghrirs, crêpes mille trous" loading="lazy">
     <span class="comment-badge">26 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Chandeleur</span><span class="category-tag">Desserts du monde</span></div>
@@ -78,6 +89,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/12/Mousse-au-chococolat-1-300x300.jpg" alt="Mousse au chocolat" loading="lazy">
     <span class="comment-badge">4 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Noël</span><span class="category-tag">Pâques</span></div>
@@ -92,6 +104,7 @@
   <div class="recipe-card-image">
     <img src="../images/2017/12/croissant-1-2-300x300.jpg" alt="Mini croissants apéro au saumon" loading="lazy">
     <span class="comment-badge">10 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Apéritif</span><span class="category-tag">Brunch</span><span class="category-tag">De la mer</span></div>
@@ -106,6 +119,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/12/friand-de-canard-6-300x300.jpg" alt="Friand au fromage" loading="lazy">
     <span class="comment-badge">10 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Apéritif</span><span class="category-tag">Noël</span><span class="category-tag">Pâques</span></div>
@@ -120,6 +134,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/10/cheesecake-oreo-in-a-jar-1-5-300x300.jpg" alt="Cheesecake in a jar à l’Oreo" loading="lazy">
     <span class="comment-badge">15 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Halloween</span><span class="category-tag">Recettes de fêtes</span></div>
@@ -134,6 +149,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/03/oeufs-de-pâques-1-300x300.jpg" alt="Oeufs de pâques chocolat au lait et mousse de framboise" loading="lazy">
     <span class="comment-badge">71 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Pâques</span><span class="category-tag">Recettes de fêtes</span><span class="category-tag">Sucré</span></div>
@@ -148,6 +164,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/02/panna-cotta-chocolat-blanc-et-clémentines-corses-2-sur-16-300x300.jpg" alt="Panna cotta chocolat blanc et clémentines corses" loading="lazy">
     <span class="comment-badge">48 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Desserts du monde</span><span class="category-tag">Recettes de fêtes</span><span class="category-tag">Saint-Valentin</span></div>
@@ -162,6 +179,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/02/Marshmallow-guimauve-saint-valentin-5-sur-14-300x300.jpg" alt="Un chamallow tout rose et une guimauve toute blanche" loading="lazy">
     <span class="comment-badge">89 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Recettes de fêtes</span><span class="category-tag">Saint-Valentin</span><span class="category-tag">Sucré</span></div>
@@ -176,6 +194,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/12/Profiteroles-au-chocolat-2-3-sur-6-300x300.jpg" alt="Profiteroles au chocolat" loading="lazy">
     <span class="comment-badge">14 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Noël</span><span class="category-tag">Recettes de fêtes</span></div>
@@ -190,6 +209,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/12/cheesecake-saumon-4-sur-8-300x300.jpg" alt="Cheesecake Saumon" loading="lazy">
     <span class="comment-badge">44 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Apéritif</span><span class="category-tag">De la mer</span><span class="category-tag">Noël</span></div>
@@ -204,6 +224,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/12/cupcakes-ferrero-rocher-nutella-27-sur-2-300x300.jpg" alt="Cupcakes Ferrero Rocher Nutella" loading="lazy">
     <span class="comment-badge">23 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Cupcakes</span><span class="category-tag">Cupcakes, cake pops &amp; co</span><span class="category-tag">Noël</span></div>
@@ -218,6 +239,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/12/sablés-de-Noël-5-585x390.jpg" alt="Sablés de Noël" loading="lazy">
     <span class="comment-badge">24 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Noël</span><span class="category-tag">Recettes de fêtes</span><span class="category-tag">Sucré</span></div>
@@ -232,6 +254,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/11/tournedos-rossini-6-sur-6-300x300.jpg" alt="Tournedos Rossini" loading="lazy">
     <span class="comment-badge">45 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Noël</span><span class="category-tag">Recettes de fêtes</span><span class="category-tag">Repas du monde</span></div>
@@ -246,6 +269,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/11/cake-pops-noël-10-sur-18-300x300.jpg" alt="Cake pops de Noël" loading="lazy">
     <span class="comment-badge">85 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Cake pops</span><span class="category-tag">Cupcakes, cake pops &amp; co</span><span class="category-tag">Noël</span></div>
@@ -260,6 +284,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/10/cake-pops-halloween-24-sur-15-300x300.jpg" alt="Cake Pops Halloween" loading="lazy">
     <span class="comment-badge">20 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Cake pops</span><span class="category-tag">Cupcakes, cake pops &amp; co</span><span class="category-tag">Halloween</span></div>

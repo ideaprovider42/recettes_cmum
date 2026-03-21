@@ -3,11 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#c0392b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Foodista Challenge - Cuisine moi un mouton</title>
   <link rel="stylesheet" href="../style.css">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="apple-touch-icon" href="../icon-192.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <script defer src="../favorites.js"></script>
   
 </head>
 <body>
@@ -21,6 +27,8 @@
       <a href="../index.html" class="">Accueil</a>
       <a href="../categories.html" class="active">Catégories</a>
       <a href="../toutes-les-recettes.html" class="">Toutes les recettes</a>
+      <a href="../favoris.html" class="nav-fav ">♥ Favoris</a>
+      <button id="pwa-install-btn" class="btn-install" style="display:none">Installer</button>
     </nav>
   </div>
 </header>
@@ -36,6 +44,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/03/Harisseh-bis-3-300x300.jpg" alt="Harisseh" loading="lazy">
     <span class="comment-badge">45 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Desserts du monde</span><span class="category-tag">Foodista Challenge</span><span class="category-tag">Sucré</span></div>
@@ -50,6 +59,7 @@
   <div class="recipe-card-image">
     <img src="../images/2016/01/Pizza-Italienne-tomates-parmesan-roquette-7-300x300.jpg" alt="Pizza Italienne tomates cerise parmesan et roquette" loading="lazy">
     <span class="comment-badge">34 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Foodista Challenge</span><span class="category-tag">Pizzas</span><span class="category-tag">Repas du monde</span></div>
@@ -64,6 +74,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/10/apple-pie-5-300x300.jpg" alt="Apple pie, la tarte aux pommes à l’américaine" loading="lazy">
     <span class="comment-badge">49 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Desserts du monde</span><span class="category-tag">Foodista Challenge</span><span class="category-tag">Sucré</span></div>
@@ -78,6 +89,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/09/choux-de-christophe-michalak-88-300x300.jpg" alt="Choux craquelin de Michalak" loading="lazy">
     <span class="comment-badge">61 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Foodista Challenge</span><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Noël</span></div>
@@ -92,6 +104,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/08/tarte-fraise-citron-4-300x300.jpg" alt="Tarte fraise citron" loading="lazy">
     <span class="comment-badge">36 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Foodista Challenge</span><span class="category-tag">Sucré</span><span class="category-tag">Tartes sucrées</span></div>
@@ -106,6 +119,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/07/esquimaux-coco-mangue-7-300x300.jpg" alt="Esquimaux coco mangue" loading="lazy">
     <span class="comment-badge">26 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Foodista Challenge</span><span class="category-tag">Sucré</span></div>
@@ -120,6 +134,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/06/gateau-marbré-savane-1-300x300.jpg" alt="Gâteau marbré façon savane" loading="lazy">
     <span class="comment-badge">49 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Foodista Challenge</span><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
@@ -134,6 +149,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/04/poulet-curry-massaman-5-300x300.jpg" alt="Poulet au curry massaman" loading="lazy">
     <span class="comment-badge">40 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Foodista Challenge</span><span class="category-tag">Repas du monde</span><span class="category-tag">Salé</span></div>
@@ -148,6 +164,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/03/picnic-ciabatta-poivrons-5-sur-6-300x300.jpg" alt="Sandwich à l’italienne bien garni pour un délicieux picnic" loading="lazy">
     <span class="comment-badge">81 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Foodista Challenge</span><span class="category-tag">Salé</span><span class="category-tag">Sandwiches</span></div>
@@ -162,6 +179,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/02/cupcake-tagada-2-300x300.jpg" alt="Cupcake tagada pour un goûter ultra girly!" loading="lazy">
     <span class="comment-badge">56 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Cupcakes</span><span class="category-tag">Cupcakes, cake pops &amp; co</span><span class="category-tag">Foodista Challenge</span></div>
@@ -176,6 +194,7 @@
   <div class="recipe-card-image">
     <img src="../images/2015/01/des-gnogno-3-sur-10-300x300.jpg" alt="Gnocchi maison à l’ail au basilic et au citron" loading="lazy">
     <span class="comment-badge">77 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Foodista Challenge</span><span class="category-tag">Pâtes et Gnocchis</span><span class="category-tag">Repas du monde</span></div>
@@ -190,6 +209,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/12/Riisipuuro-riz-au-lait-finlandais-4-sur-5-e1418764245885-300x300.jpg" alt="Riz au lait finlandais de Noël: le Riisipuuro" loading="lazy">
     <span class="comment-badge">43 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Desserts du monde</span><span class="category-tag">Foodista Challenge</span><span class="category-tag">Noël</span></div>
@@ -204,6 +224,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/11/egg-muffin-8-sur-8-300x300.jpg" alt="Qui vient bruncher? Je vous prépare un egg muffin!" loading="lazy">
     <span class="comment-badge">58 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Brunch</span><span class="category-tag">Foodista Challenge</span><span class="category-tag">Salé</span></div>
@@ -218,6 +239,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/10/layer-cake-choco-noisette-10-sur-12-300x300.jpg" alt="Layer Cake chocolat noisettes pour un goûter d’automne" loading="lazy">
     <span class="comment-badge">73 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Foodista Challenge</span><span class="category-tag">Gâteaux et Layer cakes</span><span class="category-tag">Sucré</span></div>
@@ -232,6 +254,7 @@
   <div class="recipe-card-image">
     <img src="../images/2014/09/cupcakes-pommes-foodista-4-sur-1-300x300.jpg" alt="Quand un cupcake se déguise en pomme..." loading="lazy">
     <span class="comment-badge">55 avis</span>
+    <span class="fav-indicator" title="Favori">♡</span>
   </div>
   <div class="recipe-card-content">
     <div class="recipe-card-cats"><span class="category-tag">Cupcakes</span><span class="category-tag">Cupcakes, cake pops &amp; co</span><span class="category-tag">Foodista Challenge</span></div>
