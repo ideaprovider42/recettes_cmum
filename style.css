@@ -885,6 +885,17 @@ main {
   color: var(--color-primary-dark);
 }
 
+.search-results-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.search-results-info {
+  font-size: 1rem;
+  color: var(--color-text-light);
+  margin-top: 0.3rem;
+}
+
 .no-results-page {
   text-align: center;
   padding: 4rem 2rem;

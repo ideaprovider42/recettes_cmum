@@ -171,65 +171,6 @@
     // Favorites page
     renderFavoritesPage();
 
-    // Export/Import favorites
-    var actionsDiv = document.getElementById('favorites-actions');
-    if (actionsDiv && getFavorites().size > 0) {
-      actionsDiv.style.display = '';
-    }
-
-    var exportBtn = document.getElementById('export-favs-btn');
-    if (exportBtn) {
-      exportBtn.addEventListener('click', function() {
-        var favs = [...getFavorites()];
-        var data = JSON.stringify({ cmum_favorites: favs }, null, 2);
-        var blob = new Blob([data], { type: 'application/json' });
-        var url = URL.createObjectURL(blob);
-        var a = document.createElement('a');
-        a.href = url;
-        a.download = 'mes-favoris-cmum.json';
-        a.click();
-        URL.revokeObjectURL(url);
-      });
-    }
-
-    var importInput = document.getElementById('import-favs-input');
-    if (importInput) {
-      importInput.addEventListener('change', function(e) {
-        var file = e.target.files[0];
-        if (!file) return;
-        var reader = new FileReader();
-        reader.onload = function(ev) {
-          try {
-            var parsed = JSON.parse(ev.target.result);
-            var imported = parsed.cmum_favorites;
-            if (!Array.isArray(imported)) {
-              alert('Fichier invalide : format non reconnu.');
-              return;
-            }
-            var current = getFavorites();
-            var added = 0;
-            imported.forEach(function(slug) {
-              if (typeof slug === 'string' && !current.has(slug)) {
-                current.add(slug);
-                added++;
-              }
-            });
-            saveFavorites(current);
-            syncCardIndicators();
-            renderFavoritesPage();
-            if (actionsDiv) actionsDiv.style.display = '';
-            alert(added > 0
-              ? added + ' recette(s) ajoutée(s) aux favoris (' + current.size + ' au total).'
-              : 'Tous les favoris importés étaient déjà présents (' + current.size + ' au total).');
-          } catch (err) {
-            alert('Erreur de lecture du fichier. Vérifiez qu\'il s\'agit d\'un fichier JSON valide.');
-          }
-          importInput.value = '';
-        };
-        reader.readAsText(file);
-      });
-    }
-
     // Register service worker
     if ('serviceWorker' in navigator) {
       // Determine root path

@@ -112,17 +112,26 @@ document.addEventListener('DOMContentLoaded', function() {
   if (searchGrid) {
     var params = new URLSearchParams(window.location.search);
     var q = params.get('q') || '';
+    var titleEl = document.getElementById('search-results-title');
+    var infoEl = document.getElementById('search-results-info');
+
     if (q) {
       input.value = q;
-      var titleEl = document.getElementById('search-results-title');
-      var countEl = document.getElementById('search-results-count');
       var results = search(q);
 
-      if (titleEl) titleEl.textContent = 'Résultats pour « ' + q + ' »';
-      if (countEl) countEl.textContent = '(' + results.length + ')';
+      if (titleEl) titleEl.textContent = 'Recherche : ' + q;
+      if (infoEl) {
+        if (results.length === 0) {
+          infoEl.textContent = 'Aucun résultat';
+        } else if (results.length === 1) {
+          infoEl.textContent = '1 recette trouvée';
+        } else {
+          infoEl.textContent = results.length + ' recettes trouvées';
+        }
+      }
 
       if (results.length === 0) {
-        searchGrid.innerHTML = '<div class="no-results-page"><p>Aucune recette trouvée pour « ' + escapeHtml(q) + ' »</p><a href="./toutes-les-recettes.html" class="btn-see-all">Parcourir toutes les recettes</a></div>';
+        searchGrid.innerHTML = '<div class="no-results-page"><p>Aucune recette ne correspond à « ' + escapeHtml(q) + ' »</p><a href="./toutes-les-recettes.html" class="btn-see-all">Parcourir toutes les recettes</a></div>';
       } else {
         var matchSlugs = new Set(results.map(function(r) { return r.s; }));
         searchGrid.querySelectorAll('.recipe-card').forEach(function(card) {
@@ -131,6 +140,10 @@ document.addEventListener('DOMContentLoaded', function() {
           card.style.display = matchSlugs.has(slug) ? '' : 'none';
         });
       }
+    } else {
+      if (titleEl) titleEl.textContent = 'Recherche';
+      if (infoEl) infoEl.textContent = 'Tapez un mot-clé pour rechercher une recette';
+      // Keep all cards hidden when no query
     }
   }
 });

@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
   <script defer src="./favorites.js"></script>
   <script defer src="./search.js"></script>
-  <style>.recipe-grid .recipe-card { display: none; }</style>
+  <style>#search-results-grid .recipe-card { display: none; }</style>
 </head>
 <body>
 <header class="site-header">
@@ -38,7 +38,10 @@
   <input type="text" id="search-input" placeholder="Rechercher une recette..." autocomplete="off">
   <div id="search-results" class="search-results"></div>
 </div>
-  <h2 class="page-title" id="search-results-title">Recherche <span class="recipe-count" id="search-results-count"></span></h2>
+  <div class="search-results-header">
+    <h2 class="page-title" id="search-results-title">Recherche</h2>
+    <p class="search-results-info" id="search-results-info"></p>
+  </div>
   <div class="recipe-grid" id="search-results-grid">
     <a href="./recettes/sandwich-vegetarien-au-chou-fleur-facon-chawarma.html" class="recipe-card">
   <div class="recipe-card-image">
