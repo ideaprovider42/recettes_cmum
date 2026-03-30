@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cmum-v2';
+const CACHE_NAME = 'cmum-v3';
 const OFFLINE_URL = './index.html';
 
 // Assets to precache (shell)

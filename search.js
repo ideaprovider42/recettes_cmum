@@ -115,6 +115,11 @@ document.addEventListener('DOMContentLoaded', function() {
     var titleEl = document.getElementById('search-results-title');
     var infoEl = document.getElementById('search-results-info');
 
+    // Hide all cards first
+    searchGrid.querySelectorAll('.recipe-card').forEach(function(card) {
+      card.style.display = 'none';
+    });
+
     if (q) {
       input.value = q;
       var results = search(q);
@@ -137,13 +142,12 @@ document.addEventListener('DOMContentLoaded', function() {
         searchGrid.querySelectorAll('.recipe-card').forEach(function(card) {
           var href = card.getAttribute('href') || '';
           var slug = href.replace(/.*\/recettes\//, '').replace('.html', '');
-          card.style.display = matchSlugs.has(slug) ? '' : 'none';
+          if (matchSlugs.has(slug)) card.style.display = '';
         });
       }
     } else {
       if (titleEl) titleEl.textContent = 'Recherche';
       if (infoEl) infoEl.textContent = 'Tapez un mot-clé pour rechercher une recette';
-      // Keep all cards hidden when no query
     }
   }
 });
