@@ -34,6 +34,10 @@
 </header>
 <main>
   <h2 class="page-title">Mes favoris <span class="recipe-count" id="favorites-count"></span></h2>
+  <div class="favorites-actions" id="favorites-actions" style="display:none">
+    <button id="export-favs-btn" class="btn-fav-action" title="Exporter mes favoris">&#8681; Exporter</button>
+    <label class="btn-fav-action btn-import" title="Importer des favoris">&#8679; Importer<input type="file" id="import-favs-input" accept=".json" style="display:none"></label>
+  </div>
   <div class="recipe-grid" id="favorites-grid">
     <a href="./recettes/sandwich-vegetarien-au-chou-fleur-facon-chawarma.html" class="recipe-card">
   <div class="recipe-card-image">

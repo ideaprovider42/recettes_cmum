@@ -7,7 +7,7 @@ function normalizeStr(str) {
     .replace(/[^a-z0-9\s]/g, ' ');
 }
 
-function search(query) {
+function search(query, limit) {
   if (!query || query.length < 2) return [];
   const terms = normalizeStr(query).split(/\s+/).filter(t => t.length >= 2);
   if (terms.length === 0) return [];
@@ -20,7 +20,6 @@ function search(query) {
     for (const term of terms) {
       if (searchable.includes(term)) {
         score++;
-        // Bonus for title match
         if (normalizeStr(item.t).includes(term)) score += 3;
       } else {
         allMatch = false;
@@ -31,26 +30,46 @@ function search(query) {
     }
   }
 
-  return results.sort((a, b) => b.score - a.score).slice(0, 20);
+  results.sort((a, b) => b.score - a.score);
+  return limit ? results.slice(0, limit) : results;
+}
+
+// Get root prefix based on current page depth
+function getPrefix() {
+  return window.location.pathname.split('/').filter(Boolean).length > 1 ? '..' : '.';
+}
+
+// Navigate to search results page
+function goToSearchPage(query) {
+  if (!query || query.length < 2) return;
+  var prefix = getPrefix();
+  window.location.href = prefix + '/recherche.html?q=' + encodeURIComponent(query);
 }
 
 // DOM binding
 document.addEventListener('DOMContentLoaded', function() {
-  const input = document.getElementById('search-input');
-  const resultsDiv = document.getElementById('search-results');
+  var input = document.getElementById('search-input');
+  var resultsDiv = document.getElementById('search-results');
   if (!input || !resultsDiv) return;
 
-  let debounceTimer;
+  // Enter key → search results page
+  input.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      goToSearchPage(input.value.trim());
+    }
+  });
+
+  var debounceTimer;
   input.addEventListener('input', function() {
     clearTimeout(debounceTimer);
-    debounceTimer = setTimeout(() => {
-      const query = input.value.trim();
-      const results = search(query);
+    debounceTimer = setTimeout(function() {
+      var query = input.value.trim();
+      var results = search(query);
 
       if (query.length < 2) {
         resultsDiv.innerHTML = '';
         resultsDiv.classList.remove('active');
-        // Show all cards if we're on all-recipes page
         showAllCards();
         return;
       }
@@ -62,53 +81,80 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
       }
 
-      // Determine relative path based on current page depth
-      var prefix = window.location.pathname.split('/').filter(Boolean).length > 1 ? '..' : '.';
-      resultsDiv.innerHTML = results.map(r =>
-        '<a href="' + prefix + '/recettes/' + r.s + '.html" class="search-result-item">' + escapeHtml(r.t) + '</a>'
-      ).join('');
+      var prefix = getPrefix();
+      var items = results.map(function(r) {
+        return '<a href="' + prefix + '/recettes/' + r.s + '.html" class="search-result-item">' + escapeHtml(r.t) + '</a>';
+      }).join('');
+
+      // "Voir tous les résultats" link
+      items += '<a href="' + prefix + '/recherche.html?q=' + encodeURIComponent(query) + '" class="search-see-all">Voir les ' + results.length + ' résultats</a>';
+
+      resultsDiv.innerHTML = items;
       resultsDiv.classList.add('active');
 
-      // Filter grid if on all-recipes page
-      const matchSlugs = new Set(results.map(r => r.s));
+      var matchSlugs = new Set(results.map(function(r) { return r.s; }));
       filterCards(matchSlugs);
     }, 200);
   });
 
-  // Close results on click outside
   document.addEventListener('click', function(e) {
     if (!e.target.closest('.search-bar')) {
       resultsDiv.classList.remove('active');
     }
   });
 
-  // Focus shows results again
   input.addEventListener('focus', function() {
     if (resultsDiv.innerHTML) resultsDiv.classList.add('active');
   });
+
+  // Search results page: read ?q= and display results
+  var searchGrid = document.getElementById('search-results-grid');
+  if (searchGrid) {
+    var params = new URLSearchParams(window.location.search);
+    var q = params.get('q') || '';
+    if (q) {
+      input.value = q;
+      var titleEl = document.getElementById('search-results-title');
+      var countEl = document.getElementById('search-results-count');
+      var results = search(q);
+
+      if (titleEl) titleEl.textContent = 'Résultats pour « ' + q + ' »';
+      if (countEl) countEl.textContent = '(' + results.length + ')';
+
+      if (results.length === 0) {
+        searchGrid.innerHTML = '<div class="no-results-page"><p>Aucune recette trouvée pour « ' + escapeHtml(q) + ' »</p><a href="./toutes-les-recettes.html" class="btn-see-all">Parcourir toutes les recettes</a></div>';
+      } else {
+        var matchSlugs = new Set(results.map(function(r) { return r.s; }));
+        searchGrid.querySelectorAll('.recipe-card').forEach(function(card) {
+          var href = card.getAttribute('href') || '';
+          var slug = href.replace(/.*\/recettes\//, '').replace('.html', '');
+          card.style.display = matchSlugs.has(slug) ? '' : 'none';
+        });
+      }
+    }
+  }
 });
 
 function escapeHtml(str) {
-  const div = document.createElement('div');
+  var div = document.createElement('div');
   div.textContent = str;
   return div.innerHTML;
 }
 
 function filterCards(slugs) {
-  const grid = document.getElementById('all-recipes');
+  var grid = document.getElementById('all-recipes');
   if (!grid) return;
-  const cards = grid.querySelectorAll('.recipe-card');
-  cards.forEach(card => {
-    const href = card.getAttribute('href') || '';
-    const slug = href.replace(/.*\/recettes\//, '').replace('.html', '');
+  grid.querySelectorAll('.recipe-card').forEach(function(card) {
+    var href = card.getAttribute('href') || '';
+    var slug = href.replace(/.*\/recettes\//, '').replace('.html', '');
     card.style.display = slugs.size === 0 || slugs.has(slug) ? '' : 'none';
   });
 }
 
 function showAllCards() {
-  const grid = document.getElementById('all-recipes');
+  var grid = document.getElementById('all-recipes');
   if (!grid) return;
-  grid.querySelectorAll('.recipe-card').forEach(card => {
+  grid.querySelectorAll('.recipe-card').forEach(function(card) {
     card.style.display = '';
   });
 }
